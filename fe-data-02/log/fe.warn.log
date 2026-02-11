@@ -1,0 +1,13 @@
+RuntimeLogger 2026-02-10 15:34:00,203 WARN (main|1) [KeyManagerFactory.getKeyManager():35] no KeyManager implementation found
+RuntimeLogger 2026-02-10 15:34:00,953 WARN (main|1) [Env.getNewImage():2153] get an image with a lower version, localImageVersion: 0, got version: 0
+RuntimeLogger 2026-02-10 15:34:01,617 WARN (UNKNOWN fe_deb609f9_069b_4217_a182_318085ccdf18(-1)|1) [Env.notifyNewFETypeTransfer():2949] notify new FE type transfer: FOLLOWER
+RuntimeLogger 2026-02-10 15:34:03,520 WARN (replayer|91) [Env.replayJournal():3127] entityCost:1813 loadJournalCost:1813 logId:14 replayedJournalId:14 code:7 size:344
+RuntimeLogger 2026-02-10 15:34:08,759 ERROR (UNKNOWN fe_deb609f9_069b_4217_a182_318085ccdf18(-1)|1) [LogLog.warn():157] log4j:WARN No appenders could be found for logger (io.netty.util.internal.PlatformDependent0).
+RuntimeLogger 2026-02-10 15:34:08,759 ERROR (UNKNOWN fe_deb609f9_069b_4217_a182_318085ccdf18(-1)|1) [LogLog.warn():157] log4j:WARN Please initialize the log4j system properly.
+RuntimeLogger 2026-02-10 15:34:08,759 ERROR (UNKNOWN fe_deb609f9_069b_4217_a182_318085ccdf18(-1)|1) [LogLog.warn():157] log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+RuntimeLogger 2026-02-10 15:34:08,908 WARN (UNKNOWN fe_deb609f9_069b_4217_a182_318085ccdf18(-1)|1) [QeService.start():58] Help module failed. ignore it.
+java.io.IOException: Can not find help zip file: help-resource.zip
+	at org.apache.doris.qe.help.HelpModule.setUpModule(HelpModule.java:271)
+	at org.apache.doris.qe.QeService.start(QeService.java:56)
+	at org.apache.doris.DorisFE.start(DorisFE.java:251)
+	at org.apache.doris.DorisFE.main(DorisFE.java:109)

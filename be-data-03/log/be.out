@@ -1,0 +1,13 @@
+INFO: java_cmd /usr/lib/jvm/java/bin/java
+INFO: jdk_version 17
+StdoutLogger 2026-02-10 15:33:27,448 Start time: Tue Feb 10 15:33:27 UTC 2026
+INFO: java_cmd /usr/lib/jvm/java/bin/java
+INFO: jdk_version 17
+StdoutLogger 2026-02-10 15:33:27,490 Added missing Java option: -Dhadoop.shell.setsid.enabled=false
+OpenJDK 64-Bit Server VM warning: Option CriticalJNINatives was deprecated in version 16.0 and will likely be removed in a future release.
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [org.apache.logging.slf4j.SLF4JServiceProvider@282ba1e]
+SLF4J(W): Found provider [org.slf4j.reload4j.Reload4jServiceProvider@13b6d03]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [org.apache.logging.slf4j.SLF4JServiceProvider@282ba1e]
+thrift error, reason=THRIFT_EAGAIN (timed out)thrift error, reason=THRIFT_EAGAIN (timed out)thrift error, reason=THRIFT_EAGAIN (timed out)thrift error, reason=THRIFT_EAGAIN (timed out)thrift error, reason=THRIFT_EAGAIN (timed out)thrift error, reason=THRIFT_EAGAIN (timed out)

@@ -7,7 +7,7 @@ echo "==================================="
 
 # Wait for FE master to be ready
 echo "Waiting for FE master to be ready..."
-sleep 30
+sleep 5
 
 # Connect to master FE
 MYSQL_CMD="mysql -h 172.20.80.2 -P 9030 -uroot"

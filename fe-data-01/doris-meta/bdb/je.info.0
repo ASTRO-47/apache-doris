@@ -1,0 +1,17 @@
+2026-02-20 16:14:07.172 UTC INFO [fe_af2380cc_de44_460b_84f2_b7533fe05929] No server auth method
+2026-02-20 16:14:07.176 UTC INFO [fe_af2380cc_de44_460b_84f2_b7533fe05929] Started ServiceDispatcher. HostPort=fe-01:9010
+2026-02-20 16:14:07.176 UTC INFO [fe_af2380cc_de44_460b_84f2_b7533fe05929] DataChannel factory: com.sleepycat.je.rep.utilint.net.SimpleChannelFactory
+2026-02-20 16:14:07.223 UTC INFO [fe_af2380cc_de44_460b_84f2_b7533fe05929] DTVLSN at start:0
+2026-02-20 16:14:07.224 UTC INFO [fe_af2380cc_de44_460b_84f2_b7533fe05929] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2026-02-20 16:14:07.246 UTC INFO [fe_af2380cc_de44_460b_84f2_b7533fe05929] Current group size: 0
+2026-02-20 16:14:07.246 UTC INFO [fe_af2380cc_de44_460b_84f2_b7533fe05929] New node fe_af2380cc_de44_460b_84f2_b7533fe05929(-1) unknown to rep group
+2026-02-20 16:14:07.248 UTC INFO [fe_af2380cc_de44_460b_84f2_b7533fe05929] Master changed to fe_af2380cc_de44_460b_84f2_b7533fe05929
+2026-02-20 16:14:07.248 UTC INFO [fe_af2380cc_de44_460b_84f2_b7533fe05929] Nascent group. fe_af2380cc_de44_460b_84f2_b7533fe05929 is master by virtue of being the first node.
+2026-02-20 16:14:07.248 UTC INFO [fe_af2380cc_de44_460b_84f2_b7533fe05929] node:fe_af2380cc_de44_460b_84f2_b7533fe05929(1) state change from UNKNOWN to MASTER
+2026-02-20 16:14:07.271 UTC INFO [fe_af2380cc_de44_460b_84f2_b7533fe05929] Successfully added node:fe_af2380cc_de44_460b_84f2_b7533fe05929(1) HostPort = 172.20.80.2: 9010 [ELECTABLE]
+2026-02-20 16:14:07.278 UTC INFO [fe_af2380cc_de44_460b_84f2_b7533fe05929] Updated minimum JE group version to 7.5.0
+2026-02-20 16:14:07.279 UTC INFO [fe_af2380cc_de44_460b_84f2_b7533fe05929] Node fe_af2380cc_de44_460b_84f2_b7533fe05929 started
+2026-02-20 16:14:07.279 UTC INFO [fe_af2380cc_de44_460b_84f2_b7533fe05929] node:NullNode(-1) state change from MASTER to UNKNOWN
+2026-02-20 16:14:07.279 UTC INFO [fe_af2380cc_de44_460b_84f2_b7533fe05929] node:fe_af2380cc_de44_460b_84f2_b7533fe05929(1) state change from UNKNOWN to MASTER
+2026-02-20 16:14:07.279 UTC INFO [fe_af2380cc_de44_460b_84f2_b7533fe05929] Feeder manager accepting requests.
+2026-02-20 16:14:07.280 UTC INFO [fe_af2380cc_de44_460b_84f2_b7533fe05929] Joining group as master

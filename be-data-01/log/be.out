@@ -1,0 +1,34 @@
+INFO: java_cmd /usr/lib/jvm/java/bin/java
+INFO: jdk_version 17
+StdoutLogger 2026-02-20 16:14:14,540 Start time: Fri Feb 20 16:14:14 UTC 2026
+INFO: java_cmd /usr/lib/jvm/java/bin/java
+INFO: jdk_version 17
+StdoutLogger 2026-02-20 16:14:14,600 Added missing Java option: -Dhadoop.shell.setsid.enabled=false
+StdoutLogger 2026-02-20 16:14:14,605 Added missing Java option: -Darrow.enable_null_check_for_get=false
+StdoutLogger 2026-02-20 16:14:14,611 Added missing Java option: -Djol.skipHotspotSAAttach=true
+StdoutLogger 2026-02-20 16:14:14,617 Added missing Java option: -Djavax.security.auth.useSubjectCredsOnly=false
+StdoutLogger 2026-02-20 16:14:14,622 Added missing Java option: -Dsun.security.krb5.debug=true
+StdoutLogger 2026-02-20 16:14:14,628 Added missing Java option: -Dfile.encoding=UTF-8
+StdoutLogger 2026-02-20 16:14:14,633 Added missing Java option: --add-opens=java.base/java.lang=ALL-UNNAMED
+StdoutLogger 2026-02-20 16:14:14,639 Added missing Java option: --add-opens=java.base/java.lang.invoke=ALL-UNNAMED
+StdoutLogger 2026-02-20 16:14:14,645 Added missing Java option: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+StdoutLogger 2026-02-20 16:14:14,650 Added missing Java option: --add-opens=java.base/java.io=ALL-UNNAMED
+StdoutLogger 2026-02-20 16:14:14,659 Added missing Java option: --add-opens=java.base/java.nio=ALL-UNNAMED
+StdoutLogger 2026-02-20 16:14:14,664 Added missing Java option: --add-opens=java.base/java.util=ALL-UNNAMED
+StdoutLogger 2026-02-20 16:14:14,670 Added missing Java option: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+StdoutLogger 2026-02-20 16:14:14,676 Added missing Java option: --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED
+StdoutLogger 2026-02-20 16:14:14,682 Added missing Java option: --add-opens=java.base/sun.nio.ch=ALL-UNNAMED
+StdoutLogger 2026-02-20 16:14:14,688 Added missing Java option: --add-opens=java.base/sun.nio.cs=ALL-UNNAMED
+StdoutLogger 2026-02-20 16:14:14,693 Added missing Java option: --add-opens=java.base/sun.security.action=ALL-UNNAMED
+StdoutLogger 2026-02-20 16:14:14,699 Added missing Java option: --add-opens=java.base/sun.util.calendar=ALL-UNNAME
+StdoutLogger 2026-02-20 16:14:14,705 Added missing Java option: --add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED
+StdoutLogger 2026-02-20 16:14:14,711 Added missing Java option: --add-opens=java.management/sun.management=ALL-UNNAMED
+StdoutLogger 2026-02-20 16:14:14,716 Added missing Java option: --add-opens=java.base/jdk.internal.ref=ALL-UNNAMED
+StdoutLogger 2026-02-20 16:14:14,722 Added missing Java option: --add-opens=java.xml/com.sun.org.apache.xerces.internal.jaxp=ALL-UNNAMED
+OpenJDK 64-Bit Server VM warning: Option CriticalJNINatives was deprecated in version 16.0 and will likely be removed in a future release.
+WARNING: Unknown module: ALL-UNNAME specified to --add-opens
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [org.apache.logging.slf4j.SLF4JServiceProvider@483bf400]
+SLF4J(W): Found provider [org.slf4j.reload4j.Reload4jServiceProvider@21a06946]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [org.apache.logging.slf4j.SLF4JServiceProvider@483bf400]

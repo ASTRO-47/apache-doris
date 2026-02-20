@@ -2,9 +2,8 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY generator.py .
 
-COPY *.py .
+RUN pip install --no-cache-dir boto3 pymysql
 
 CMD ["python", "generator.py"]

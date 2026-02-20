@@ -1,219 +1,130 @@
-#!/usr/bin/env python3
-"""
-Fake Event Generator for Apache Doris
-Generates various event types and inserts them into Doris via MySQL protocol
-"""
-
+import boto3
 import pymysql
 import time
 import random
 import os
 from datetime import datetime
-from faker import Faker
 
-fake = Faker()
+# =============================
+# Configuration
+# =============================
 
-# Configuration from environment
-DORIS_HOST = os.getenv('DORIS_FE_HOST', '172.20.80.2')
-DORIS_PORT = int(os.getenv('DORIS_FE_PORT', '9030'))
-DORIS_USER = os.getenv('DORIS_USER', 'root')
-DORIS_PASSWORD = os.getenv('DORIS_PASSWORD', '')
-EVENTS_PER_SECOND = int(os.getenv('EVENTS_PER_SECOND', '10'))
+MINIO_ENDPOINT = "http://minio:9000"
+MINIO_ACCESS_KEY = "astro"
+MINIO_SECRET_KEY = "Makeclean@123"
+BUCKET_NAME = "fake-events"
 
-def get_connection():
-    """Establish connection to Doris"""
-    max_retries = 10
-    for attempt in range(max_retries):
+DORIS_HOST = "doris-fe-01"
+DORIS_PORT = 9030
+DORIS_USER = "root"
+DORIS_PASSWORD = ""
+DORIS_DB = "events_db"
+DORIS_TABLE = "events_s3load"
+
+# Throughput settings: ingest 25GB compacted in ~1 hour
+# Strategy: more columns + higher cardinality = less compressible = more actual stored data
+# At 5:1 compression: need ~125GB raw CSV in 1 hour
+ROWS_PER_BATCH = 500000  # 500K rows per file
+FILES_PER_BATCH = 10     # 10 files per iteration = 5M rows per iteration
+SLEEP_SECONDS = 5        # 5s between iterations
+
+# =============================
+# Setup S3 Client
+# =============================
+
+s3 = boto3.client(
+    "s3",
+    endpoint_url=MINIO_ENDPOINT,
+    aws_access_key_id=MINIO_ACCESS_KEY,
+    aws_secret_access_key=MINIO_SECRET_KEY,
+)
+
+# =============================
+# Helper Functions
+# =============================
+
+def generate_csv(filename, start_id):
+    with open(filename, "w") as f:
+        print("generating file: " + filename)
+        for i in range(ROWS_PER_BATCH):
+            row_id = start_id + i
+            event_name = f"event{random.randint(1,100)}"
+            value = round(random.uniform(1, 10000), 2)
+            user_id = random.randint(1, 100000)
+            timestamp = int(time.time()) + random.randint(-86400, 86400)
+            description = f"desc_{random.randint(1, 50000)}_event"
+            f.write(f"{row_id},{event_name},{value},{user_id},{timestamp},{description}\n")
+
+
+def upload_to_minio(filename):
+    s3.upload_file(filename, BUCKET_NAME, filename)
+    print(f"[UPLOAD] {filename} uploaded to MinIO")
+
+
+def load_into_doris(filename, label):
+    connection = pymysql.connect(
+        host=DORIS_HOST,
+        port=DORIS_PORT,
+        user=DORIS_USER,
+        password=DORIS_PASSWORD,
+        database=DORIS_DB,
+    )
+
+    sql = f"""
+    LOAD LABEL {DORIS_DB}.{label}
+    (
+        DATA INFILE("s3://{BUCKET_NAME}/{filename}")
+        INTO TABLE {DORIS_TABLE}
+        COLUMNS TERMINATED BY ","
+        FORMAT AS "CSV"
+        (id, event, value, user_id, timestamp, description)
+    )
+    WITH S3
+    (
+        "provider" = "S3",
+        "s3.endpoint" = "{MINIO_ENDPOINT}",
+        "s3.region" = "us-east-1",
+        "s3.access_key" = "{MINIO_ACCESS_KEY}",
+        "s3.secret_key" = "{MINIO_SECRET_KEY}",
+        "use_path_style" = "true"
+    )
+    PROPERTIES
+    (
+        "timeout" = "3600"
+    );
+    """
+
+    with connection.cursor() as cursor:
+        cursor.execute(sql)
+
+    connection.close()
+    print(f"[LOAD] {filename} load triggered")
+
+
+# =============================
+# Main Loop
+# =============================
+
+current_id = 1000000
+
+while True:
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    print(f"\n[START BATCH] {timestamp} - rows_per_file={ROWS_PER_BATCH}, files={FILES_PER_BATCH}")
+
+    for file_index in range(FILES_PER_BATCH):
+        filename = f"events_{timestamp}_{file_index}.csv"
+        label = f"batch_{timestamp}_{file_index}"
+
+        generate_csv(filename, current_id)
+        upload_to_minio(filename)
+        load_into_doris(filename, label)
+
+        current_id += ROWS_PER_BATCH
+
         try:
-            conn = pymysql.connect(
-                host=DORIS_HOST,
-                port=DORIS_PORT,
-                user=DORIS_USER,
-                password=DORIS_PASSWORD,
-                autocommit=True
-            )
-            print(f"✓ Connected to Doris at {DORIS_HOST}:{DORIS_PORT}")
-            return conn
-        except Exception as e:
-            print(f"Connection attempt {attempt + 1}/{max_retries} failed: {e}")
-            time.sleep(5)
-    raise Exception("Could not connect to Doris after multiple attempts")
+            os.remove(filename)
+        except OSError:
+            pass
 
-def init_database(conn):
-    """Create database and tables if they don't exist"""
-    cursor = conn.cursor()
-    
-    # Create database
-    try:
-        cursor.execute("CREATE DATABASE IF NOT EXISTS demo_db")
-        print("✓ Database 'demo_db' ready")
-    except Exception as e:
-        print(f"Database creation: {e}")
-    
-    cursor.execute("USE demo_db")
-    
-    # Create user_events table
-    create_table_sql = """
-    CREATE TABLE IF NOT EXISTS user_events (
-        event_id BIGINT,
-        user_id INT,
-        event_type VARCHAR(50),
-        event_time DATETIME,
-        page_url VARCHAR(200),
-        device VARCHAR(50),
-        city VARCHAR(100),
-        country VARCHAR(100)
-    )
-    DUPLICATE KEY(event_id)
-    DISTRIBUTED BY HASH(user_id) BUCKETS 10
-    PROPERTIES (
-        "replication_num" = "3"
-    )
-    """
-    
-    try:
-        cursor.execute(create_table_sql)
-        print("✓ Table 'user_events' ready")
-    except Exception as e:
-        print(f"Table creation: {e}")
-    
-    # Create purchase_events table
-    create_purchase_table = """
-    CREATE TABLE IF NOT EXISTS purchase_events (
-        purchase_id BIGINT,
-        user_id INT,
-        product_name VARCHAR(200),
-        category VARCHAR(100),
-        price DECIMAL(10,2),
-        quantity INT,
-        purchase_time DATETIME,
-        payment_method VARCHAR(50)
-    )
-    DUPLICATE KEY(purchase_id)
-    DISTRIBUTED BY HASH(user_id) BUCKETS 10
-    PROPERTIES (
-        "replication_num" = "3"
-    )
-    """
-    
-    try:
-        cursor.execute(create_purchase_table)
-        print("✓ Table 'purchase_events' ready")
-    except Exception as e:
-        print(f"Purchase table creation: {e}")
-    
-    cursor.close()
-
-def generate_user_event():
-    """Generate a fake user event"""
-    event_types = ['page_view', 'click', 'scroll', 'search', 'login', 'logout']
-    devices = ['desktop', 'mobile', 'tablet']
-    
-    return {
-        'event_id': random.randint(1000000, 9999999),
-        'user_id': random.randint(1, 10000),
-        'event_type': random.choice(event_types),
-        'event_time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-        'page_url': fake.url(),
-        'device': random.choice(devices),
-        'city': fake.city(),
-        'country': fake.country()
-    }
-
-def generate_purchase_event():
-    """Generate a fake purchase event"""
-    categories = ['Electronics', 'Clothing', 'Books', 'Home', 'Sports', 'Food']
-    payment_methods = ['credit_card', 'paypal', 'crypto', 'debit_card']
-    
-    return {
-        'purchase_id': random.randint(1000000, 9999999),
-        'user_id': random.randint(1, 10000),
-        'product_name': fake.catch_phrase(),
-        'category': random.choice(categories),
-        'price': round(random.uniform(5.99, 999.99), 2),
-        'quantity': random.randint(1, 5),
-        'purchase_time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-        'payment_method': random.choice(payment_methods)
-    }
-
-def insert_user_event(cursor, event):
-    """Insert user event into Doris"""
-    sql = """
-    INSERT INTO user_events 
-    (event_id, user_id, event_type, event_time, page_url, device, city, country)
-    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-    """
-    cursor.execute(sql, (
-        event['event_id'],
-        event['user_id'],
-        event['event_type'],
-        event['event_time'],
-        event['page_url'],
-        event['device'],
-        event['city'],
-        event['country']
-    ))
-
-def insert_purchase_event(cursor, event):
-    """Insert purchase event into Doris"""
-    sql = """
-    INSERT INTO purchase_events
-    (purchase_id, user_id, product_name, category, price, quantity, purchase_time, payment_method)
-    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-    """
-    cursor.execute(sql, (
-        event['purchase_id'],
-        event['user_id'],
-        event['product_name'],
-        event['category'],
-        event['price'],
-        event['quantity'],
-        event['purchase_time'],
-        event['payment_method']
-    ))
-
-def main():
-    """Main event generation loop"""
-    print("=" * 60)
-    print("Doris Event Generator Starting...")
-    print(f"Target: {DORIS_HOST}:{DORIS_PORT}")
-    print(f"Rate: {EVENTS_PER_SECOND} events/second")
-    print("=" * 60)
-    
-    conn = get_connection()
-    init_database(conn)
-    
-    cursor = conn.cursor()
-    event_count = 0
-    
-    print("\n Generating events... (Ctrl+C to stop)\n")
-    
-    try:
-        while True:
-            # Generate user events (70% of traffic)
-            if random.random() < 0.7:
-                event = generate_user_event()
-                insert_user_event(cursor, event)
-                event_count += 1
-                print(f"[{event_count}] User Event: {event['event_type']} by user {event['user_id']}")
-            
-            # Generate purchase events (30% of traffic)
-            else:
-                event = generate_purchase_event()
-                insert_purchase_event(cursor, event)
-                event_count += 1
-                print(f"[{event_count}] Purchase: {event['product_name'][:30]} - ${event['price']}")
-            
-            # Control rate
-            time.sleep(1.0 / EVENTS_PER_SECOND)
-            
-    except KeyboardInterrupt:
-        print(f"\n✓ Stopped. Total events generated: {event_count}")
-    except Exception as e:
-        print(f"\n✗ Error: {e}")
-    finally:
-        cursor.close()
-        conn.close()
-
-if __name__ == '__main__':
-    main()
+    print(f"[SLEEP] Waiting {SLEEP_SECONDS} seconds...\n")
+    time.sleep(SLEEP_SECONDS)

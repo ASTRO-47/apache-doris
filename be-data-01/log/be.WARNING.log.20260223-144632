@@ -1,0 +1,54 @@
+RuntimeLogger W20260223 14:46:32.878736   782 timezone_utils.cpp:99] Meet illegal tzdata file: leapseconds. skipped
+RuntimeLogger W20260223 14:46:32.882359   782 timezone_utils.cpp:99] Meet illegal tzdata file: tzdata.zi. skipped
+RuntimeLogger W20260223 14:46:32.882752   782 timezone_utils.cpp:99] Meet illegal tzdata file: leap-seconds.list. skipped
+RuntimeLogger W20260223 14:46:32.889881   782 timezone_utils.cpp:99] Meet illegal tzdata file: iso3166.tab. skipped
+RuntimeLogger W20260223 14:46:32.914841   782 timezone_utils.cpp:99] Meet illegal tzdata file: zonenow.tab. skipped
+RuntimeLogger W20260223 14:46:32.943421   782 timezone_utils.cpp:99] Meet illegal tzdata file: zone1970.tab. skipped
+RuntimeLogger W20260223 14:46:32.985162   782 timezone_utils.cpp:99] Meet illegal tzdata file: zone.tab. skipped
+RuntimeLogger E20260223 14:46:33.086508   782 variable.cpp:179] Already exposed `doris_cache_data_page_cache' whose value is `0'
+RuntimeLogger E20260223 14:46:33.086735   782 variable.cpp:179] Already exposed `doris_cache_data_page_cache_persecond' whose value is `0'
+RuntimeLogger E20260223 14:46:33.087771   782 variable.cpp:179] Already exposed `doris_cache_index_page_cache' whose value is `0'
+RuntimeLogger E20260223 14:46:33.087891   782 variable.cpp:179] Already exposed `doris_cache_index_page_cache_persecond' whose value is `0'
+RuntimeLogger E20260223 14:46:33.088348   782 variable.cpp:179] Already exposed `doris_cache_pkindex_page_cache' whose value is `0'
+RuntimeLogger E20260223 14:46:33.088418   782 variable.cpp:179] Already exposed `doris_cache_pkindex_page_cache_persecond' whose value is `0'
+RuntimeLogger E20260223 14:46:33.088789   782 variable.cpp:179] Already exposed `doris_cache_point_query_row_cache' whose value is `0'
+RuntimeLogger E20260223 14:46:33.088842   782 variable.cpp:179] Already exposed `doris_cache_point_query_row_cache_persecond' whose value is `0'
+RuntimeLogger E20260223 14:46:33.089092   782 variable.cpp:179] Already exposed `doris_cache_segment_cache' whose value is `0'
+RuntimeLogger E20260223 14:46:33.089157   782 variable.cpp:179] Already exposed `doris_cache_segment_cache_persecond' whose value is `0'
+RuntimeLogger E20260223 14:46:33.089323   782 variable.cpp:179] Already exposed `doris_cache_schema_cache' whose value is `0'
+RuntimeLogger E20260223 14:46:33.089367   782 variable.cpp:179] Already exposed `doris_cache_schema_cache_persecond' whose value is `0'
+RuntimeLogger E20260223 14:46:33.089526   782 variable.cpp:179] Already exposed `doris_cache_common_obj_lrucache' whose value is `0'
+RuntimeLogger E20260223 14:46:33.089571   782 variable.cpp:179] Already exposed `doris_cache_common_obj_lrucache_persecond' whose value is `0'
+RuntimeLogger E20260223 14:46:33.089715   782 variable.cpp:179] Already exposed `doris_cache_point_query_lookup_connection_cache' whose value is `0'
+RuntimeLogger E20260223 14:46:33.089757   782 variable.cpp:179] Already exposed `doris_cache_point_query_lookup_connection_cache_persecond' whose value is `0'
+RuntimeLogger E20260223 14:46:33.090250   782 variable.cpp:179] Already exposed `doris_cache_inverted_index_searcher_cache' whose value is `0'
+RuntimeLogger E20260223 14:46:33.090309   782 variable.cpp:179] Already exposed `doris_cache_inverted_index_searcher_cache_persecond' whose value is `0'
+RuntimeLogger E20260223 14:46:33.090839   782 variable.cpp:179] Already exposed `doris_cache_inverted_index_query_cache' whose value is `0'
+RuntimeLogger E20260223 14:46:33.090914   782 variable.cpp:179] Already exposed `doris_cache_inverted_index_query_cache_persecond' whose value is `0'
+RuntimeLogger E20260223 14:46:33.091192   782 variable.cpp:179] Already exposed `doris_cache_query_cache' whose value is `0'
+RuntimeLogger E20260223 14:46:33.091245   782 variable.cpp:179] Already exposed `doris_cache_query_cache_persecond' whose value is `0'
+RuntimeLogger E20260223 14:46:33.091683   782 variable.cpp:179] Already exposed `doris_cache_mow_delete_bitmap_agg_cache' whose value is `0'
+RuntimeLogger E20260223 14:46:33.091730   782 variable.cpp:179] Already exposed `doris_cache_mow_delete_bitmap_agg_cache_persecond' whose value is `0'
+RuntimeLogger E20260223 14:46:33.541666   782 variable.cpp:179] Already exposed `doris_cache_load_state_channel_cache_' whose value is `0'
+RuntimeLogger E20260223 14:46:33.541751   782 variable.cpp:179] Already exposed `doris_cache_load_state_channel_cache_persecond' whose value is `0'
+RuntimeLogger E20260223 14:46:33.542670   782 variable.cpp:179] Already exposed `doris_cache_tablet_schema_cache' whose value is `0'
+RuntimeLogger E20260223 14:46:33.542768   782 variable.cpp:179] Already exposed `doris_cache_tablet_schema_cache_persecond' whose value is `0'
+RuntimeLogger E20260223 14:46:33.542900   782 variable.cpp:179] Already exposed `doris_cache_tablet_column_object_pool' whose value is `0'
+RuntimeLogger E20260223 14:46:33.542946   782 variable.cpp:179] Already exposed `doris_cache_tablet_column_object_pool_persecond' whose value is `0'
+RuntimeLogger E20260223 14:46:33.550503   782 variable.cpp:179] Already exposed `doris_cache_mow_tablet_version_cache' whose value is `0'
+RuntimeLogger E20260223 14:46:33.550668   782 variable.cpp:179] Already exposed `doris_cache_mow_tablet_version_cache_persecond' whose value is `0'
+RuntimeLogger E20260223 14:46:33.550824   782 variable.cpp:179] Already exposed `doris_cache_create_tablet_rridx_cache' whose value is `0'
+RuntimeLogger E20260223 14:46:33.550873   782 variable.cpp:179] Already exposed `doris_cache_create_tablet_rridx_cache_persecond' whose value is `0'
+RuntimeLogger W20260223 14:46:33.738546  1083 olap_server.cpp:781] Have not get FE Master heartbeat yet
+RuntimeLogger W20260223 14:46:34.353186   782 status.h:439] meet error status: [NOT_FOUND]Key not found: stream_load_recorder_manager_last_fetch_key
+
+	0#  doris::StreamLoadRecorder::get(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, bool) at /home/zcp/repo_center/doris_release/doris/be/src/common/status.h:494
+	1#  doris::StreamLoadRecorderManager::_load_last_fetch_key() at /usr/local/ldb-toolchain-v0.26/bin/../lib/gcc/x86_64-pc-linux-gnu/15/include/g++-v15/bits/basic_string.h:239
+	2#  doris::StreamLoadRecorderManager::start() at /usr/local/ldb-toolchain-v0.26/bin/../lib/gcc/x86_64-pc-linux-gnu/15/include/g++-v15/bits/std_thread.h:103
+	3#  doris::ExecEnv::_init(std::vector<doris::StorePath, std::allocator<doris::StorePath> > const&, std::vector<doris::StorePath, std::allocator<doris::StorePath> > const&, std::set<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) at /home/zcp/repo_center/doris_release/doris/be/src/runtime/exec_env_init.cpp:0
+	4#  doris::ExecEnv::init(doris::ExecEnv*, std::vector<doris::StorePath, std::allocator<doris::StorePath> > const&, std::vector<doris::StorePath, std::allocator<doris::StorePath> > const&, std::set<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) at /home/zcp/repo_center/doris_release/doris/be/src/runtime/exec_env_init.cpp:191
+	5#  main at /home/zcp/repo_center/doris_release/doris/be/src/service/doris_main.cpp:0
+	6#  ?
+	7#  __libc_start_main
+	8#  _start
+RuntimeLogger W20260223 14:46:43.689839  2499 stream_load_executor.cpp:197] begin transaction failed, errmsg=[NOT_FOUND]TStatus: errCode = 7, detailMessage = table not found, tableName=audit_logid=704a191250605fdf-78d177f35f5683a8, job_id=-1, txn_id=-1, label=audit_log_20260223_144643_486_172_20_80_2_9010, elapse(s)=0

@@ -1,17 +1,19 @@
-RuntimeLogger 2026-02-20 16:14:06,473 WARN (main|1) [KeyManagerFactory.getKeyManager():35] no KeyManager implementation found
-RuntimeLogger 2026-02-20 16:14:07,282 WARN (MASTER fe_af2380cc_de44_460b_84f2_b7533fe05929(1)|1) [Env.notifyNewFETypeTransfer():2949] notify new FE type transfer: MASTER
-RuntimeLogger 2026-02-20 16:14:07,552 ERROR (stateListener|84) [LogLog.warn():157] log4j:WARN No appenders could be found for logger (io.netty.util.ResourceLeakDetector).
-RuntimeLogger 2026-02-20 16:14:07,553 ERROR (stateListener|84) [LogLog.warn():157] log4j:WARN Please initialize the log4j system properly.
-RuntimeLogger 2026-02-20 16:14:07,553 ERROR (stateListener|84) [LogLog.warn():157] log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
-RuntimeLogger 2026-02-20 16:14:07,661 WARN (InternalSchemaInitializer|159) [InternalSchemaInitializer.run():85] FE is not ready
-RuntimeLogger 2026-02-20 16:14:07,784 WARN (TopicPublisher|55) [WorkloadGroupPublisher.getTopicInfo():45] [topic_publish]currently, doris at least has one workload group named normal, so get a size 0 here is an error, should check it.
-RuntimeLogger 2026-02-20 16:14:11,581 WARN (MASTER fe_af2380cc_de44_460b_84f2_b7533fe05929(1)|1) [QeService.start():58] Help module failed. ignore it.
+RuntimeLogger 2026-02-23 14:45:43,000 WARN (main|1) [KeyManagerFactory.getKeyManager():35] no KeyManager implementation found
+RuntimeLogger 2026-02-23 14:45:46,004 WARN (MASTER fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3(1)|1) [Env.notifyNewFETypeTransfer():2949] notify new FE type transfer: MASTER
+RuntimeLogger 2026-02-23 14:45:46,817 ERROR (stateListener|85) [LogLog.warn():157] log4j:WARN No appenders could be found for logger (io.netty.util.ResourceLeakDetector).
+RuntimeLogger 2026-02-23 14:45:46,819 ERROR (stateListener|85) [LogLog.warn():157] log4j:WARN Please initialize the log4j system properly.
+RuntimeLogger 2026-02-23 14:45:46,819 ERROR (stateListener|85) [LogLog.warn():157] log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+RuntimeLogger 2026-02-23 14:45:47,071 WARN (InternalSchemaInitializer|160) [InternalSchemaInitializer.run():85] FE is not ready
+RuntimeLogger 2026-02-23 14:45:47,762 WARN (TopicPublisher|56) [WorkloadGroupPublisher.getTopicInfo():45] [topic_publish]currently, doris at least has one workload group named normal, so get a size 0 here is an error, should check it.
+RuntimeLogger 2026-02-23 14:46:12,985 WARN (InternalSchemaInitializer|160) [AbstractMonitoredLock.afterUnlock():60] Thread ID: 160, Thread Name: InternalSchemaInitializer - Lock held for 14895 ms, exceeding hold timeout of 14895 ms Thread stack trace:	at java.base/java.lang.Thread.getStackTrace(Thread.java:1610)\n	at org.apache.doris.common.lock.AbstractMonitoredLock.afterUnlock(AbstractMonitoredLock.java:59)\n	at org.apache.doris.common.lock.MonitoredReentrantLock.unlock(MonitoredReentrantLock.java:59)\n	at org.apache.doris.datasource.InternalCatalog.unlock(InternalCatalog.java:360)\n	at org.apache.doris.datasource.InternalCatalog.createDb(InternalCatalog.java:443)\n	at org.apache.doris.catalog.Env.createDb(Env.java:3373)\n	at org.apache.doris.catalog.InternalSchemaInitializer.createDb(InternalSchemaInitializer.java:528)\n	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:91)\n
+RuntimeLogger 2026-02-23 14:46:17,764 WARN (TopicPublisher|56) [WorkloadGroupPublisher.getTopicInfo():45] [topic_publish]currently, doris at least has one workload group named normal, so get a size 0 here is an error, should check it.
+RuntimeLogger 2026-02-23 14:46:20,275 WARN (MASTER fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3(1)|1) [QeService.start():58] Help module failed. ignore it.
 java.io.IOException: Can not find help zip file: help-resource.zip
 	at org.apache.doris.qe.help.HelpModule.setUpModule(HelpModule.java:271)
 	at org.apache.doris.qe.QeService.start(QeService.java:56)
 	at org.apache.doris.DorisFE.start(DorisFE.java:251)
 	at org.apache.doris.DorisFE.main(DorisFE.java:109)
-RuntimeLogger 2026-02-20 16:14:14,133 ERROR (mysql-nio-pool-0|195) [DistributePlanner.plan():119] Failed to build distribute plans
+RuntimeLogger 2026-02-23 14:46:26,473 ERROR (mysql-nio-pool-1|195) [DistributePlanner.plan():119] Failed to build distribute plans
 org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:158)
 	at org.apache.doris.nereids.trees.plans.distribute.SelectedWorkers.tryToSelectRandomUsedWorker(SelectedWorkers.java:63)
@@ -40,7 +42,7 @@ Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = N
 	at org.apache.doris.qe.SimpleScheduler.getHost(SimpleScheduler.java:281)
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:154)
 	... 22 more
-RuntimeLogger 2026-02-20 16:14:14,133 ERROR (mysql-nio-pool-1|196) [DistributePlanner.plan():119] Failed to build distribute plans
+RuntimeLogger 2026-02-23 14:46:26,473 ERROR (mysql-nio-pool-2|200) [DistributePlanner.plan():119] Failed to build distribute plans
 org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:158)
 	at org.apache.doris.nereids.trees.plans.distribute.SelectedWorkers.tryToSelectRandomUsedWorker(SelectedWorkers.java:63)
@@ -69,7 +71,36 @@ Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = N
 	at org.apache.doris.qe.SimpleScheduler.getHost(SimpleScheduler.java:281)
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:154)
 	... 22 more
-RuntimeLogger 2026-02-20 16:14:14,134 WARN (mysql-nio-pool-0|195) [StmtExecutor.executeByNereids():751] Nereids plan query failed:
+RuntimeLogger 2026-02-23 14:46:26,475 ERROR (mysql-nio-pool-0|194) [DistributePlanner.plan():119] Failed to build distribute plans
+org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.
+	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:158)
+	at org.apache.doris.nereids.trees.plans.distribute.SelectedWorkers.tryToSelectRandomUsedWorker(SelectedWorkers.java:63)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.job.UnassignedQueryConstantJob.computeAssignedJobs(UnassignedQueryConstantJob.java:43)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.job.AssignedJobBuilder.buildJobs(AssignedJobBuilder.java:48)
+	at org.apache.doris.nereids.trees.plans.distribute.DistributePlanner.plan(DistributePlanner.java:96)
+	at org.apache.doris.nereids.NereidsPlanner.doDistribute(NereidsPlanner.java:716)
+	at org.apache.doris.nereids.NereidsPlanner.distribute(NereidsPlanner.java:687)
+	at org.apache.doris.nereids.NereidsPlanner.lambda$plan$0(NereidsPlanner.java:166)
+	at org.apache.doris.nereids.NereidsPlanner.planWithLock(NereidsPlanner.java:264)
+	at org.apache.doris.nereids.NereidsPlanner.plan(NereidsPlanner.java:162)
+	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:748)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:541)
+	at org.apache.doris.qe.StmtExecutor.queryRetry(StmtExecutor.java:500)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:485)
+	at org.apache.doris.qe.ConnectProcessor.executeQuery(ConnectProcessor.java:311)
+	at org.apache.doris.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:198)
+	at org.apache.doris.qe.MysqlConnectProcessor.handleQuery(MysqlConnectProcessor.java:231)
+	at org.apache.doris.qe.MysqlConnectProcessor.dispatch(MysqlConnectProcessor.java:259)
+	at org.apache.doris.qe.MysqlConnectProcessor.processOnce(MysqlConnectProcessor.java:403)
+	at org.apache.doris.mysql.ReadListener.lambda$handleEvent$0(ReadListener.java:52)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.
+	at org.apache.doris.qe.SimpleScheduler.getHost(SimpleScheduler.java:281)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:154)
+	... 22 more
+RuntimeLogger 2026-02-23 14:46:26,475 WARN (mysql-nio-pool-0|194) [StmtExecutor.executeByNereids():751] Nereids plan query failed:
 select @@version_comment limit 1
 org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:158)
@@ -99,7 +130,37 @@ Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = N
 	at org.apache.doris.qe.SimpleScheduler.getHost(SimpleScheduler.java:281)
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:154)
 	... 22 more
-RuntimeLogger 2026-02-20 16:14:14,134 WARN (mysql-nio-pool-1|196) [StmtExecutor.executeByNereids():751] Nereids plan query failed:
+RuntimeLogger 2026-02-23 14:46:26,475 WARN (mysql-nio-pool-2|200) [StmtExecutor.executeByNereids():751] Nereids plan query failed:
+SELECT 1
+org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.
+	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:158)
+	at org.apache.doris.nereids.trees.plans.distribute.SelectedWorkers.tryToSelectRandomUsedWorker(SelectedWorkers.java:63)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.job.UnassignedQueryConstantJob.computeAssignedJobs(UnassignedQueryConstantJob.java:43)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.job.AssignedJobBuilder.buildJobs(AssignedJobBuilder.java:48)
+	at org.apache.doris.nereids.trees.plans.distribute.DistributePlanner.plan(DistributePlanner.java:96)
+	at org.apache.doris.nereids.NereidsPlanner.doDistribute(NereidsPlanner.java:716)
+	at org.apache.doris.nereids.NereidsPlanner.distribute(NereidsPlanner.java:687)
+	at org.apache.doris.nereids.NereidsPlanner.lambda$plan$0(NereidsPlanner.java:166)
+	at org.apache.doris.nereids.NereidsPlanner.planWithLock(NereidsPlanner.java:264)
+	at org.apache.doris.nereids.NereidsPlanner.plan(NereidsPlanner.java:162)
+	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:748)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:541)
+	at org.apache.doris.qe.StmtExecutor.queryRetry(StmtExecutor.java:500)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:485)
+	at org.apache.doris.qe.ConnectProcessor.executeQuery(ConnectProcessor.java:311)
+	at org.apache.doris.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:198)
+	at org.apache.doris.qe.MysqlConnectProcessor.handleQuery(MysqlConnectProcessor.java:231)
+	at org.apache.doris.qe.MysqlConnectProcessor.dispatch(MysqlConnectProcessor.java:259)
+	at org.apache.doris.qe.MysqlConnectProcessor.processOnce(MysqlConnectProcessor.java:403)
+	at org.apache.doris.mysql.ReadListener.lambda$handleEvent$0(ReadListener.java:52)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.
+	at org.apache.doris.qe.SimpleScheduler.getHost(SimpleScheduler.java:281)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:154)
+	... 22 more
+RuntimeLogger 2026-02-23 14:46:26,476 WARN (mysql-nio-pool-1|195) [StmtExecutor.executeByNereids():751] Nereids plan query failed:
 select @@version_comment limit 1
 org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:158)
@@ -129,7 +190,7 @@ Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = N
 	at org.apache.doris.qe.SimpleScheduler.getHost(SimpleScheduler.java:281)
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:154)
 	... 22 more
-RuntimeLogger 2026-02-20 16:14:14,134 WARN (mysql-nio-pool-0|195) [StmtExecutor.execute():552] Analyze failed. stmt[2, d64ef251f6eb43be-ab40a204d6d9b633]
+RuntimeLogger 2026-02-23 14:46:26,477 WARN (mysql-nio-pool-0|194) [StmtExecutor.execute():552] Analyze failed. stmt[2, e67b516ce4cb4f05-b50c7da49adc82ff]
 org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.
 	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:752)
 	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:541)
@@ -144,7 +205,7 @@ org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backen
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-RuntimeLogger 2026-02-20 16:14:14,134 WARN (mysql-nio-pool-1|196) [StmtExecutor.execute():552] Analyze failed. stmt[1, 54e0f6dc091a417a-ad4c4c225b7ab6c7]
+RuntimeLogger 2026-02-23 14:46:26,480 WARN (mysql-nio-pool-1|195) [StmtExecutor.execute():552] Analyze failed. stmt[1, 3bff6c56263245f6-bebf6f334c4067c9]
 org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.
 	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:752)
 	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:541)
@@ -159,7 +220,22 @@ org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backen
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-RuntimeLogger 2026-02-20 16:14:14,223 ERROR (mysql-nio-pool-1|196) [DistributePlanner.plan():119] Failed to build distribute plans
+RuntimeLogger 2026-02-23 14:46:26,480 WARN (mysql-nio-pool-2|200) [StmtExecutor.execute():552] Analyze failed. stmt[3, 82f7c48dfeaa448b-bef2f1a86a4bba5e]
+org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.
+	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:752)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:541)
+	at org.apache.doris.qe.StmtExecutor.queryRetry(StmtExecutor.java:500)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:485)
+	at org.apache.doris.qe.ConnectProcessor.executeQuery(ConnectProcessor.java:311)
+	at org.apache.doris.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:198)
+	at org.apache.doris.qe.MysqlConnectProcessor.handleQuery(MysqlConnectProcessor.java:231)
+	at org.apache.doris.qe.MysqlConnectProcessor.dispatch(MysqlConnectProcessor.java:259)
+	at org.apache.doris.qe.MysqlConnectProcessor.processOnce(MysqlConnectProcessor.java:403)
+	at org.apache.doris.mysql.ReadListener.lambda$handleEvent$0(ReadListener.java:52)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+RuntimeLogger 2026-02-23 14:46:26,802 ERROR (mysql-nio-pool-2|200) [DistributePlanner.plan():119] Failed to build distribute plans
 org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:158)
 	at org.apache.doris.nereids.trees.plans.distribute.SelectedWorkers.tryToSelectRandomUsedWorker(SelectedWorkers.java:63)
@@ -188,7 +264,7 @@ Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = N
 	at org.apache.doris.qe.SimpleScheduler.getHost(SimpleScheduler.java:281)
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:154)
 	... 22 more
-RuntimeLogger 2026-02-20 16:14:14,223 WARN (mysql-nio-pool-1|196) [StmtExecutor.executeByNereids():751] Nereids plan query failed:
+RuntimeLogger 2026-02-23 14:46:26,802 WARN (mysql-nio-pool-2|200) [StmtExecutor.executeByNereids():751] Nereids plan query failed:
 select @@version_comment limit 1
 org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:158)
@@ -218,7 +294,7 @@ Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = N
 	at org.apache.doris.qe.SimpleScheduler.getHost(SimpleScheduler.java:281)
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:154)
 	... 22 more
-RuntimeLogger 2026-02-20 16:14:14,224 WARN (mysql-nio-pool-1|196) [StmtExecutor.execute():552] Analyze failed. stmt[5, d2d8ac975b434777-a85ffb6f54c60d43]
+RuntimeLogger 2026-02-23 14:46:26,803 WARN (mysql-nio-pool-2|200) [StmtExecutor.execute():552] Analyze failed. stmt[6, a774c42ad60d4edf-81312f61de7d98d7]
 org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.
 	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:752)
 	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:541)
@@ -233,7 +309,7 @@ org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backen
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-RuntimeLogger 2026-02-20 16:14:14,269 ERROR (mysql-nio-pool-1|196) [DistributePlanner.plan():119] Failed to build distribute plans
+RuntimeLogger 2026-02-23 14:46:26,967 ERROR (mysql-nio-pool-2|200) [DistributePlanner.plan():119] Failed to build distribute plans
 org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:158)
 	at org.apache.doris.nereids.trees.plans.distribute.SelectedWorkers.tryToSelectRandomUsedWorker(SelectedWorkers.java:63)
@@ -262,7 +338,7 @@ Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = N
 	at org.apache.doris.qe.SimpleScheduler.getHost(SimpleScheduler.java:281)
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:154)
 	... 22 more
-RuntimeLogger 2026-02-20 16:14:14,269 WARN (mysql-nio-pool-1|196) [StmtExecutor.executeByNereids():751] Nereids plan query failed:
+RuntimeLogger 2026-02-23 14:46:26,967 WARN (mysql-nio-pool-2|200) [StmtExecutor.executeByNereids():751] Nereids plan query failed:
 select @@version_comment limit 1
 org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:158)
@@ -292,7 +368,7 @@ Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = N
 	at org.apache.doris.qe.SimpleScheduler.getHost(SimpleScheduler.java:281)
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:154)
 	... 22 more
-RuntimeLogger 2026-02-20 16:14:14,269 WARN (mysql-nio-pool-1|196) [StmtExecutor.execute():552] Analyze failed. stmt[7, 8463918f71664261-acfe22ca5fb76590]
+RuntimeLogger 2026-02-23 14:46:26,969 WARN (mysql-nio-pool-2|200) [StmtExecutor.execute():552] Analyze failed. stmt[8, 1a64846ae23b43bc-88c02e74aa56df80]
 org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.
 	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:752)
 	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:541)
@@ -307,8 +383,8 @@ org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backen
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-RuntimeLogger 2026-02-20 16:14:14,328 ERROR (mysql-nio-pool-1|196) [DistributePlanner.plan():119] Failed to build distribute plans
-org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771604047309: not alive]
+RuntimeLogger 2026-02-23 14:46:27,162 ERROR (mysql-nio-pool-2|200) [DistributePlanner.plan():119] Failed to build distribute plans
+org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:158)
 	at org.apache.doris.nereids.trees.plans.distribute.SelectedWorkers.tryToSelectRandomUsedWorker(SelectedWorkers.java:63)
 	at org.apache.doris.nereids.trees.plans.distribute.worker.job.UnassignedQueryConstantJob.computeAssignedJobs(UnassignedQueryConstantJob.java:43)
@@ -332,13 +408,13 @@ org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backen
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771604047309: not alive]
+Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
 	at org.apache.doris.qe.SimpleScheduler.getHost(SimpleScheduler.java:297)
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:154)
 	... 22 more
-RuntimeLogger 2026-02-20 16:14:14,329 WARN (mysql-nio-pool-1|196) [StmtExecutor.executeByNereids():751] Nereids plan query failed:
+RuntimeLogger 2026-02-23 14:46:27,162 WARN (mysql-nio-pool-2|200) [StmtExecutor.executeByNereids():751] Nereids plan query failed:
 select @@version_comment limit 1
-org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771604047309: not alive]
+org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:158)
 	at org.apache.doris.nereids.trees.plans.distribute.SelectedWorkers.tryToSelectRandomUsedWorker(SelectedWorkers.java:63)
 	at org.apache.doris.nereids.trees.plans.distribute.worker.job.UnassignedQueryConstantJob.computeAssignedJobs(UnassignedQueryConstantJob.java:43)
@@ -362,12 +438,12 @@ org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backen
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771604047309: not alive]
+Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
 	at org.apache.doris.qe.SimpleScheduler.getHost(SimpleScheduler.java:297)
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:154)
 	... 22 more
-RuntimeLogger 2026-02-20 16:14:14,329 WARN (mysql-nio-pool-1|196) [StmtExecutor.execute():552] Analyze failed. stmt[9, da195ca0c3264571-9d493a2d07a6778f]
-org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771604047309: not alive]
+RuntimeLogger 2026-02-23 14:46:27,163 WARN (mysql-nio-pool-2|200) [StmtExecutor.execute():552] Analyze failed. stmt[10, 9049af54fbaa4ff7-a7985ad6cedd6d6f]
+org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
 	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:752)
 	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:541)
 	at org.apache.doris.qe.StmtExecutor.queryRetry(StmtExecutor.java:500)
@@ -381,8 +457,8 @@ org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backen
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-RuntimeLogger 2026-02-20 16:14:15,200 ERROR (mysql-nio-pool-1|196) [DistributePlanner.plan():119] Failed to build distribute plans
-org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771604047309: not alive]
+RuntimeLogger 2026-02-23 14:46:27,639 ERROR (mysql-nio-pool-2|200) [DistributePlanner.plan():119] Failed to build distribute plans
+org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:158)
 	at org.apache.doris.nereids.trees.plans.distribute.SelectedWorkers.tryToSelectRandomUsedWorker(SelectedWorkers.java:63)
 	at org.apache.doris.nereids.trees.plans.distribute.worker.job.UnassignedQueryConstantJob.computeAssignedJobs(UnassignedQueryConstantJob.java:43)
@@ -406,13 +482,13 @@ org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backen
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771604047309: not alive]
+Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
 	at org.apache.doris.qe.SimpleScheduler.getHost(SimpleScheduler.java:297)
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:154)
 	... 22 more
-RuntimeLogger 2026-02-20 16:14:15,201 WARN (mysql-nio-pool-1|196) [StmtExecutor.executeByNereids():751] Nereids plan query failed:
+RuntimeLogger 2026-02-23 14:46:27,639 WARN (mysql-nio-pool-2|200) [StmtExecutor.executeByNereids():751] Nereids plan query failed:
 select @@version_comment limit 1
-org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771604047309: not alive]
+org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:158)
 	at org.apache.doris.nereids.trees.plans.distribute.SelectedWorkers.tryToSelectRandomUsedWorker(SelectedWorkers.java:63)
 	at org.apache.doris.nereids.trees.plans.distribute.worker.job.UnassignedQueryConstantJob.computeAssignedJobs(UnassignedQueryConstantJob.java:43)
@@ -436,12 +512,12 @@ org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backen
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771604047309: not alive]
+Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
 	at org.apache.doris.qe.SimpleScheduler.getHost(SimpleScheduler.java:297)
 	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:154)
 	... 22 more
-RuntimeLogger 2026-02-20 16:14:15,201 WARN (mysql-nio-pool-1|196) [StmtExecutor.execute():552] Analyze failed. stmt[11, 8829b42d18944681-9b75cda21363ef76]
-org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771604047309: not alive]
+RuntimeLogger 2026-02-23 14:46:27,639 WARN (mysql-nio-pool-2|200) [StmtExecutor.execute():552] Analyze failed. stmt[12, 1f974016a07c4d99-b068d4a59f7f7a95]
+org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
 	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:752)
 	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:541)
 	at org.apache.doris.qe.StmtExecutor.queryRetry(StmtExecutor.java:500)
@@ -455,12 +531,9 @@ org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backen
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-RuntimeLogger 2026-02-20 16:14:19,175 ERROR (InternalSchemaInitializer|159) [SystemInfoService.selectBackendIdsForReplicaCreation():566] failed backend(s) for policy: computeNode=false | query=false | load=false | schedule=true | tags={"location" : "default"} | medium=SSD real medium HDD
-RuntimeLogger 2026-02-20 16:14:19,177 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3241] create table failed [1771604047315] - errCode = 2, detailMessage = Failed to find enough backend, please check the replication num,replication tag and storage medium and avail capacity of backends or maybe all be on same host. Backends details: backends with tag {"location" : "default"} is [[backendId=1771604047309, host=172.20.80.4, hdd disks count={}, ssd disk count={}]], 
-Create failed replications:
-replication tag: {"location" : "default"}, replication num: 1, storage medium: HDD
-RuntimeLogger 2026-02-20 16:14:19,177 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3257] drop table
-org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771604047313
+RuntimeLogger 2026-02-23 14:46:27,775 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3241] create table failed [1771857946076] - errCode = 2, detailMessage = replication num should be less than the number of available backends. replication num is 1, available backend num is 0
+RuntimeLogger 2026-02-23 14:46:27,776 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3257] drop table
+org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771857946074
 	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
 	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
 	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
@@ -472,12 +545,9 @@ org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = tabl
 	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
 	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:317)
 	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
-RuntimeLogger 2026-02-20 16:14:19,189 ERROR (InternalSchemaInitializer|159) [SystemInfoService.selectBackendIdsForReplicaCreation():566] failed backend(s) for policy: computeNode=false | query=false | load=false | schedule=true | tags={"location" : "default"} | medium=SSD real medium HDD
-RuntimeLogger 2026-02-20 16:14:19,189 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3241] create table failed [1771604047332] - errCode = 2, detailMessage = Failed to find enough backend, please check the replication num,replication tag and storage medium and avail capacity of backends or maybe all be on same host. Backends details: backends with tag {"location" : "default"} is [[backendId=1771604047309, host=172.20.80.4, hdd disks count={}, ssd disk count={}]], 
-Create failed replications:
-replication tag: {"location" : "default"}, replication num: 1, storage medium: HDD
-RuntimeLogger 2026-02-20 16:14:19,189 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3257] drop table
-org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771604047330
+RuntimeLogger 2026-02-23 14:46:27,792 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3241] create table failed [1771857946093] - errCode = 2, detailMessage = replication num should be less than the number of available backends. replication num is 1, available backend num is 0
+RuntimeLogger 2026-02-23 14:46:27,792 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3257] drop table
+org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771857946091
 	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
 	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
 	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
@@ -489,12 +559,9 @@ org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = tabl
 	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
 	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:342)
 	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
-RuntimeLogger 2026-02-20 16:14:19,218 ERROR (InternalSchemaInitializer|159) [SystemInfoService.selectBackendIdsForReplicaCreation():566] failed backend(s) for policy: computeNode=false | query=false | load=false | schedule=true | tags={"location" : "default"} | medium=null real medium null
-RuntimeLogger 2026-02-20 16:14:19,219 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3241] create table failed [] - errCode = 2, detailMessage = Failed to find enough backend, please check the replication num,replication tag and storage medium and avail capacity of backends or maybe all be on same host. Backends details: backends with tag {"location" : "default"} is [[backendId=1771604047309, host=172.20.80.4, hdd disks count={}, ssd disk count={}]], 
-Create failed replications:
-replication tag: {"location" : "default"}, replication num: 1, storage medium: null
-RuntimeLogger 2026-02-20 16:14:19,219 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3257] drop table
-org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771604047346
+RuntimeLogger 2026-02-23 14:46:27,889 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3241] create table failed [] - errCode = 2, detailMessage = replication num should be less than the number of available backends. replication num is 1, available backend num is 0
+RuntimeLogger 2026-02-23 14:46:27,890 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3257] drop table
+org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771857946107
 	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
 	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
 	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
@@ -506,538 +573,606 @@ org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = tabl
 	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
 	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:407)
 	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
-RuntimeLogger 2026-02-20 16:14:24,229 ERROR (InternalSchemaInitializer|159) [SystemInfoService.selectBackendIdsForReplicaCreation():566] failed backend(s) for policy: computeNode=false | query=false | load=false | schedule=true | tags={"location" : "default"} | medium=SSD real medium HDD
-RuntimeLogger 2026-02-20 16:14:24,230 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3241] create table failed [1771604047352] - errCode = 2, detailMessage = Failed to find enough backend, please check the replication num,replication tag and storage medium and avail capacity of backends or maybe all be on same host. Backends details: backends with tag {"location" : "default"} is [[backendId=1771604047309, host=172.20.80.4, hdd disks count={}, ssd disk count={}]], 
-Create failed replications:
-replication tag: {"location" : "default"}, replication num: 1, storage medium: HDD
-RuntimeLogger 2026-02-20 16:14:24,230 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3257] drop table
-org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771604047350
-	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
-	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
-	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
-	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
-	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
-	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:317)
-	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
-RuntimeLogger 2026-02-20 16:14:24,239 ERROR (InternalSchemaInitializer|159) [SystemInfoService.selectBackendIdsForReplicaCreation():566] failed backend(s) for policy: computeNode=false | query=false | load=false | schedule=true | tags={"location" : "default"} | medium=SSD real medium HDD
-RuntimeLogger 2026-02-20 16:14:24,239 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3241] create table failed [1771604047369] - errCode = 2, detailMessage = Failed to find enough backend, please check the replication num,replication tag and storage medium and avail capacity of backends or maybe all be on same host. Backends details: backends with tag {"location" : "default"} is [[backendId=1771604047309, host=172.20.80.4, hdd disks count={}, ssd disk count={}]], 
-Create failed replications:
-replication tag: {"location" : "default"}, replication num: 1, storage medium: HDD
-RuntimeLogger 2026-02-20 16:14:24,239 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3257] drop table
-org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771604047367
-	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
-	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
-	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
-	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
-	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
-	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:342)
-	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
-RuntimeLogger 2026-02-20 16:14:24,255 ERROR (InternalSchemaInitializer|159) [SystemInfoService.selectBackendIdsForReplicaCreation():566] failed backend(s) for policy: computeNode=false | query=false | load=false | schedule=true | tags={"location" : "default"} | medium=null real medium null
-RuntimeLogger 2026-02-20 16:14:24,255 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3241] create table failed [] - errCode = 2, detailMessage = Failed to find enough backend, please check the replication num,replication tag and storage medium and avail capacity of backends or maybe all be on same host. Backends details: backends with tag {"location" : "default"} is [[backendId=1771604047309, host=172.20.80.4, hdd disks count={}, ssd disk count={}]], 
-Create failed replications:
-replication tag: {"location" : "default"}, replication num: 1, storage medium: null
-RuntimeLogger 2026-02-20 16:14:24,255 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3257] drop table
-org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771604047383
-	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
-	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
-	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
-	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
-	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
-	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:407)
-	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
-RuntimeLogger 2026-02-20 16:14:29,262 ERROR (InternalSchemaInitializer|159) [SystemInfoService.selectBackendIdsForReplicaCreation():566] failed backend(s) for policy: computeNode=false | query=false | load=false | schedule=true | tags={"location" : "default"} | medium=SSD real medium HDD
-RuntimeLogger 2026-02-20 16:14:29,262 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3241] create table failed [1771604047389] - errCode = 2, detailMessage = Failed to find enough backend, please check the replication num,replication tag and storage medium and avail capacity of backends or maybe all be on same host. Backends details: backends with tag {"location" : "default"} is [[backendId=1771604047309, host=172.20.80.4, hdd disks count={}, ssd disk count={}]], 
-Create failed replications:
-replication tag: {"location" : "default"}, replication num: 1, storage medium: HDD
-RuntimeLogger 2026-02-20 16:14:29,263 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3257] drop table
-org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771604047387
-	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
-	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
-	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
-	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
-	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
-	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:317)
-	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
-RuntimeLogger 2026-02-20 16:14:29,269 ERROR (InternalSchemaInitializer|159) [SystemInfoService.selectBackendIdsForReplicaCreation():566] failed backend(s) for policy: computeNode=false | query=false | load=false | schedule=true | tags={"location" : "default"} | medium=SSD real medium HDD
-RuntimeLogger 2026-02-20 16:14:29,269 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3241] create table failed [1771604047406] - errCode = 2, detailMessage = Failed to find enough backend, please check the replication num,replication tag and storage medium and avail capacity of backends or maybe all be on same host. Backends details: backends with tag {"location" : "default"} is [[backendId=1771604047309, host=172.20.80.4, hdd disks count={}, ssd disk count={}]], 
-Create failed replications:
-replication tag: {"location" : "default"}, replication num: 1, storage medium: HDD
-RuntimeLogger 2026-02-20 16:14:29,269 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3257] drop table
-org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771604047404
-	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
-	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
-	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
-	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
-	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
-	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:342)
-	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
-RuntimeLogger 2026-02-20 16:14:29,283 ERROR (InternalSchemaInitializer|159) [SystemInfoService.selectBackendIdsForReplicaCreation():566] failed backend(s) for policy: computeNode=false | query=false | load=false | schedule=true | tags={"location" : "default"} | medium=null real medium null
-RuntimeLogger 2026-02-20 16:14:29,283 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3241] create table failed [] - errCode = 2, detailMessage = Failed to find enough backend, please check the replication num,replication tag and storage medium and avail capacity of backends or maybe all be on same host. Backends details: backends with tag {"location" : "default"} is [[backendId=1771604047309, host=172.20.80.4, hdd disks count={}, ssd disk count={}]], 
-Create failed replications:
-replication tag: {"location" : "default"}, replication num: 1, storage medium: null
-RuntimeLogger 2026-02-20 16:14:29,283 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3257] drop table
-org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771604047420
-	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
-	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
-	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
-	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
-	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
-	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:407)
-	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
-RuntimeLogger 2026-02-20 16:14:34,290 ERROR (InternalSchemaInitializer|159) [SystemInfoService.selectBackendIdsForReplicaCreation():566] failed backend(s) for policy: computeNode=false | query=false | load=false | schedule=true | tags={"location" : "default"} | medium=SSD real medium HDD
-RuntimeLogger 2026-02-20 16:14:34,290 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3241] create table failed [1771604047426] - errCode = 2, detailMessage = Failed to find enough backend, please check the replication num,replication tag and storage medium and avail capacity of backends or maybe all be on same host. Backends details: backends with tag {"location" : "default"} is [[backendId=1771604047309, host=172.20.80.4, hdd disks count={}, ssd disk count={}]], 
-Create failed replications:
-replication tag: {"location" : "default"}, replication num: 1, storage medium: HDD
-RuntimeLogger 2026-02-20 16:14:34,290 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3257] drop table
-org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771604047424
-	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
-	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
-	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
-	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
-	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
-	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:317)
-	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
-RuntimeLogger 2026-02-20 16:14:34,298 ERROR (InternalSchemaInitializer|159) [SystemInfoService.selectBackendIdsForReplicaCreation():566] failed backend(s) for policy: computeNode=false | query=false | load=false | schedule=true | tags={"location" : "default"} | medium=SSD real medium HDD
-RuntimeLogger 2026-02-20 16:14:34,298 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3241] create table failed [1771604047443] - errCode = 2, detailMessage = Failed to find enough backend, please check the replication num,replication tag and storage medium and avail capacity of backends or maybe all be on same host. Backends details: backends with tag {"location" : "default"} is [[backendId=1771604047309, host=172.20.80.4, hdd disks count={}, ssd disk count={}]], 
-Create failed replications:
-replication tag: {"location" : "default"}, replication num: 1, storage medium: HDD
-RuntimeLogger 2026-02-20 16:14:34,298 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3257] drop table
-org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771604047441
-	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
-	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
-	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
-	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
-	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
-	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:342)
-	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
-RuntimeLogger 2026-02-20 16:14:34,311 ERROR (InternalSchemaInitializer|159) [SystemInfoService.selectBackendIdsForReplicaCreation():566] failed backend(s) for policy: computeNode=false | query=false | load=false | schedule=true | tags={"location" : "default"} | medium=null real medium null
-RuntimeLogger 2026-02-20 16:14:34,311 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3241] create table failed [] - errCode = 2, detailMessage = Failed to find enough backend, please check the replication num,replication tag and storage medium and avail capacity of backends or maybe all be on same host. Backends details: backends with tag {"location" : "default"} is [[backendId=1771604047309, host=172.20.80.4, hdd disks count={}, ssd disk count={}]], 
-Create failed replications:
-replication tag: {"location" : "default"}, replication num: 1, storage medium: null
-RuntimeLogger 2026-02-20 16:14:34,311 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3257] drop table
-org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771604047457
-	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
-	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
-	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
-	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
-	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
-	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:407)
-	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
-RuntimeLogger 2026-02-20 16:14:39,319 ERROR (InternalSchemaInitializer|159) [SystemInfoService.selectBackendIdsForReplicaCreation():566] failed backend(s) for policy: computeNode=false | query=false | load=false | schedule=true | tags={"location" : "default"} | medium=SSD real medium HDD
-RuntimeLogger 2026-02-20 16:14:39,319 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3241] create table failed [1771604047463] - errCode = 2, detailMessage = Failed to find enough backend, please check the replication num,replication tag and storage medium and avail capacity of backends or maybe all be on same host. Backends details: backends with tag {"location" : "default"} is [[backendId=1771604047309, host=172.20.80.4, hdd disks count={}, ssd disk count={}]], 
-Create failed replications:
-replication tag: {"location" : "default"}, replication num: 1, storage medium: HDD
-RuntimeLogger 2026-02-20 16:14:39,319 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3257] drop table
-org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771604047461
-	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
-	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
-	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
-	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
-	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
-	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:317)
-	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
-RuntimeLogger 2026-02-20 16:14:39,324 ERROR (InternalSchemaInitializer|159) [SystemInfoService.selectBackendIdsForReplicaCreation():566] failed backend(s) for policy: computeNode=false | query=false | load=false | schedule=true | tags={"location" : "default"} | medium=SSD real medium HDD
-RuntimeLogger 2026-02-20 16:14:39,324 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3241] create table failed [1771604047480] - errCode = 2, detailMessage = Failed to find enough backend, please check the replication num,replication tag and storage medium and avail capacity of backends or maybe all be on same host. Backends details: backends with tag {"location" : "default"} is [[backendId=1771604047309, host=172.20.80.4, hdd disks count={}, ssd disk count={}]], 
-Create failed replications:
-replication tag: {"location" : "default"}, replication num: 1, storage medium: HDD
-RuntimeLogger 2026-02-20 16:14:39,324 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3257] drop table
-org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771604047478
-	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
-	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
-	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
-	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
-	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
-	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:342)
-	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
-RuntimeLogger 2026-02-20 16:14:39,333 ERROR (InternalSchemaInitializer|159) [SystemInfoService.selectBackendIdsForReplicaCreation():566] failed backend(s) for policy: computeNode=false | query=false | load=false | schedule=true | tags={"location" : "default"} | medium=null real medium null
-RuntimeLogger 2026-02-20 16:14:39,333 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3241] create table failed [] - errCode = 2, detailMessage = Failed to find enough backend, please check the replication num,replication tag and storage medium and avail capacity of backends or maybe all be on same host. Backends details: backends with tag {"location" : "default"} is [[backendId=1771604047309, host=172.20.80.4, hdd disks count={}, ssd disk count={}]], 
-Create failed replications:
-replication tag: {"location" : "default"}, replication num: 1, storage medium: null
-RuntimeLogger 2026-02-20 16:14:39,333 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3257] drop table
-org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771604047494
-	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
-	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
-	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
-	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
-	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
-	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:407)
-	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
-RuntimeLogger 2026-02-20 16:14:44,339 ERROR (InternalSchemaInitializer|159) [SystemInfoService.selectBackendIdsForReplicaCreation():566] failed backend(s) for policy: computeNode=false | query=false | load=false | schedule=true | tags={"location" : "default"} | medium=SSD real medium HDD
-RuntimeLogger 2026-02-20 16:14:44,339 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3241] create table failed [1771604047500] - errCode = 2, detailMessage = Failed to find enough backend, please check the replication num,replication tag and storage medium and avail capacity of backends or maybe all be on same host. Backends details: backends with tag {"location" : "default"} is [[backendId=1771604047309, host=172.20.80.4, hdd disks count={}, ssd disk count={}]], 
-Create failed replications:
-replication tag: {"location" : "default"}, replication num: 1, storage medium: HDD
-RuntimeLogger 2026-02-20 16:14:44,340 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3257] drop table
-org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771604047498
-	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
-	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
-	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
-	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
-	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
-	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:317)
-	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
-RuntimeLogger 2026-02-20 16:14:44,345 ERROR (InternalSchemaInitializer|159) [SystemInfoService.selectBackendIdsForReplicaCreation():566] failed backend(s) for policy: computeNode=false | query=false | load=false | schedule=true | tags={"location" : "default"} | medium=SSD real medium HDD
-RuntimeLogger 2026-02-20 16:14:44,345 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3241] create table failed [1771604047517] - errCode = 2, detailMessage = Failed to find enough backend, please check the replication num,replication tag and storage medium and avail capacity of backends or maybe all be on same host. Backends details: backends with tag {"location" : "default"} is [[backendId=1771604047309, host=172.20.80.4, hdd disks count={}, ssd disk count={}]], 
-Create failed replications:
-replication tag: {"location" : "default"}, replication num: 1, storage medium: HDD
-RuntimeLogger 2026-02-20 16:14:44,345 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3257] drop table
-org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771604047515
-	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
-	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
-	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
-	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
-	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
-	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:342)
-	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
-RuntimeLogger 2026-02-20 16:14:44,353 ERROR (InternalSchemaInitializer|159) [SystemInfoService.selectBackendIdsForReplicaCreation():566] failed backend(s) for policy: computeNode=false | query=false | load=false | schedule=true | tags={"location" : "default"} | medium=null real medium null
-RuntimeLogger 2026-02-20 16:14:44,353 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3241] create table failed [] - errCode = 2, detailMessage = Failed to find enough backend, please check the replication num,replication tag and storage medium and avail capacity of backends or maybe all be on same host. Backends details: backends with tag {"location" : "default"} is [[backendId=1771604047309, host=172.20.80.4, hdd disks count={}, ssd disk count={}]], 
-Create failed replications:
-replication tag: {"location" : "default"}, replication num: 1, storage medium: null
-RuntimeLogger 2026-02-20 16:14:44,353 WARN (InternalSchemaInitializer|159) [InternalCatalog.createOlapTable():3257] drop table
-org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771604047531
-	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
-	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
-	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
-	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
-	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
-	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
-	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
-	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:407)
-	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
-RuntimeLogger 2026-02-20 21:53:50,474 WARN (qtp2105183523-181|181) [RestApiExceptionHandler.unexpectedExceptionHandler():61] unexpected exception
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource security.txt.
-	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
-	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:527)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
-	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:751)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1622)
-	at org.eclipse.jetty.ee10.websocket.servlet.WebSocketUpgradeFilter.doFilter(WebSocketUpgradeFilter.java:195)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:205)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.apache.doris.httpv2.interceptor.ServletTraceIterceptor.doFilter(ServletTraceIterceptor.java:55)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:208)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:205)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:205)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:205)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1555)
-	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:824)
-	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:439)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:470)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:575)
-	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:717)
-	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1096)
-	at org.eclipse.jetty.server.Handler$Wrapper.handle(Handler.java:740)
-	at org.eclipse.jetty.server.handler.EventsHandler.handle(EventsHandler.java:81)
-	at org.eclipse.jetty.server.Server.handle(Server.java:182)
-	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:677)
-	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:416)
-	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:322)
-	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
-	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:492)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.epcRunTask(AdaptiveExecutionStrategy.java:428)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:401)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:255)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:204)
-	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:311)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:981)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1211)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1166)
+RuntimeLogger 2026-02-23 14:46:31,664 ERROR (mysql-nio-pool-2|200) [DistributePlanner.plan():119] Failed to build distribute plans
+org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
+	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:158)
+	at org.apache.doris.nereids.trees.plans.distribute.SelectedWorkers.tryToSelectRandomUsedWorker(SelectedWorkers.java:63)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.job.UnassignedQueryConstantJob.computeAssignedJobs(UnassignedQueryConstantJob.java:43)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.job.AssignedJobBuilder.buildJobs(AssignedJobBuilder.java:48)
+	at org.apache.doris.nereids.trees.plans.distribute.DistributePlanner.plan(DistributePlanner.java:96)
+	at org.apache.doris.nereids.NereidsPlanner.doDistribute(NereidsPlanner.java:716)
+	at org.apache.doris.nereids.NereidsPlanner.distribute(NereidsPlanner.java:687)
+	at org.apache.doris.nereids.NereidsPlanner.lambda$plan$0(NereidsPlanner.java:166)
+	at org.apache.doris.nereids.NereidsPlanner.planWithLock(NereidsPlanner.java:264)
+	at org.apache.doris.nereids.NereidsPlanner.plan(NereidsPlanner.java:162)
+	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:748)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:541)
+	at org.apache.doris.qe.StmtExecutor.queryRetry(StmtExecutor.java:500)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:485)
+	at org.apache.doris.qe.ConnectProcessor.executeQuery(ConnectProcessor.java:311)
+	at org.apache.doris.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:198)
+	at org.apache.doris.qe.MysqlConnectProcessor.handleQuery(MysqlConnectProcessor.java:231)
+	at org.apache.doris.qe.MysqlConnectProcessor.dispatch(MysqlConnectProcessor.java:259)
+	at org.apache.doris.qe.MysqlConnectProcessor.processOnce(MysqlConnectProcessor.java:403)
+	at org.apache.doris.mysql.ReadListener.lambda$handleEvent$0(ReadListener.java:52)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-RuntimeLogger 2026-02-20 21:54:13,840 WARN (qtp2105183523-183|183) [RestApiExceptionHandler.unexpectedExceptionHandler():61] unexpected exception
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/security.txt.
-	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
-	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:527)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
-	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:751)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1622)
-	at org.eclipse.jetty.ee10.websocket.servlet.WebSocketUpgradeFilter.doFilter(WebSocketUpgradeFilter.java:195)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:205)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.apache.doris.httpv2.interceptor.ServletTraceIterceptor.doFilter(ServletTraceIterceptor.java:55)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:208)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:205)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:205)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:205)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1555)
-	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:824)
-	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:439)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:470)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:575)
-	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:717)
-	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1096)
-	at org.eclipse.jetty.server.Handler$Wrapper.handle(Handler.java:740)
-	at org.eclipse.jetty.server.handler.EventsHandler.handle(EventsHandler.java:81)
-	at org.eclipse.jetty.server.Server.handle(Server.java:182)
-	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:677)
-	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:416)
-	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:322)
-	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
-	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:492)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.epcRunTask(AdaptiveExecutionStrategy.java:428)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:401)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:255)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:204)
-	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:311)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:981)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1211)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1166)
+Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
+	at org.apache.doris.qe.SimpleScheduler.getHost(SimpleScheduler.java:297)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:154)
+	... 22 more
+RuntimeLogger 2026-02-23 14:46:31,664 WARN (mysql-nio-pool-2|200) [StmtExecutor.executeByNereids():751] Nereids plan query failed:
+SELECT 1
+org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
+	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:158)
+	at org.apache.doris.nereids.trees.plans.distribute.SelectedWorkers.tryToSelectRandomUsedWorker(SelectedWorkers.java:63)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.job.UnassignedQueryConstantJob.computeAssignedJobs(UnassignedQueryConstantJob.java:43)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.job.AssignedJobBuilder.buildJobs(AssignedJobBuilder.java:48)
+	at org.apache.doris.nereids.trees.plans.distribute.DistributePlanner.plan(DistributePlanner.java:96)
+	at org.apache.doris.nereids.NereidsPlanner.doDistribute(NereidsPlanner.java:716)
+	at org.apache.doris.nereids.NereidsPlanner.distribute(NereidsPlanner.java:687)
+	at org.apache.doris.nereids.NereidsPlanner.lambda$plan$0(NereidsPlanner.java:166)
+	at org.apache.doris.nereids.NereidsPlanner.planWithLock(NereidsPlanner.java:264)
+	at org.apache.doris.nereids.NereidsPlanner.plan(NereidsPlanner.java:162)
+	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:748)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:541)
+	at org.apache.doris.qe.StmtExecutor.queryRetry(StmtExecutor.java:500)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:485)
+	at org.apache.doris.qe.ConnectProcessor.executeQuery(ConnectProcessor.java:311)
+	at org.apache.doris.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:198)
+	at org.apache.doris.qe.MysqlConnectProcessor.handleQuery(MysqlConnectProcessor.java:231)
+	at org.apache.doris.qe.MysqlConnectProcessor.dispatch(MysqlConnectProcessor.java:259)
+	at org.apache.doris.qe.MysqlConnectProcessor.processOnce(MysqlConnectProcessor.java:403)
+	at org.apache.doris.mysql.ReadListener.lambda$handleEvent$0(ReadListener.java:52)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-RuntimeLogger 2026-02-20 21:54:13,870 WARN (qtp2105183523-180|180) [RestApiExceptionHandler.unexpectedExceptionHandler():61] unexpected exception
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource robots.txt.
-	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
-	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:527)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
-	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:751)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1622)
-	at org.eclipse.jetty.ee10.websocket.servlet.WebSocketUpgradeFilter.doFilter(WebSocketUpgradeFilter.java:195)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:205)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.apache.doris.httpv2.interceptor.ServletTraceIterceptor.doFilter(ServletTraceIterceptor.java:55)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:208)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:205)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:205)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:205)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1555)
-	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:824)
-	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:439)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:470)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:575)
-	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:717)
-	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1096)
-	at org.eclipse.jetty.server.Handler$Wrapper.handle(Handler.java:740)
-	at org.eclipse.jetty.server.handler.EventsHandler.handle(EventsHandler.java:81)
-	at org.eclipse.jetty.server.Server.handle(Server.java:182)
-	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:677)
-	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:416)
-	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:322)
-	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
-	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:492)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.epcRunTask(AdaptiveExecutionStrategy.java:428)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:401)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:255)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:204)
-	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:311)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:981)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1211)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1166)
+Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
+	at org.apache.doris.qe.SimpleScheduler.getHost(SimpleScheduler.java:297)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:154)
+	... 22 more
+RuntimeLogger 2026-02-23 14:46:31,664 WARN (mysql-nio-pool-2|200) [StmtExecutor.execute():552] Analyze failed. stmt[14, 30da5657671d4223-9ed492a0c83c4aaf]
+org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
+	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:752)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:541)
+	at org.apache.doris.qe.StmtExecutor.queryRetry(StmtExecutor.java:500)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:485)
+	at org.apache.doris.qe.ConnectProcessor.executeQuery(ConnectProcessor.java:311)
+	at org.apache.doris.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:198)
+	at org.apache.doris.qe.MysqlConnectProcessor.handleQuery(MysqlConnectProcessor.java:231)
+	at org.apache.doris.qe.MysqlConnectProcessor.dispatch(MysqlConnectProcessor.java:259)
+	at org.apache.doris.qe.MysqlConnectProcessor.processOnce(MysqlConnectProcessor.java:403)
+	at org.apache.doris.mysql.ReadListener.lambda$handleEvent$0(ReadListener.java:52)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-RuntimeLogger 2026-02-20 21:54:24,267 WARN (qtp2105183523-181|181) [RestApiExceptionHandler.unexpectedExceptionHandler():61] unexpected exception
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sitemap.xml.
-	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
-	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:527)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
-	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:751)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1622)
-	at org.eclipse.jetty.ee10.websocket.servlet.WebSocketUpgradeFilter.doFilter(WebSocketUpgradeFilter.java:195)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:205)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.apache.doris.httpv2.interceptor.ServletTraceIterceptor.doFilter(ServletTraceIterceptor.java:55)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:208)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:205)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:205)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:205)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1555)
-	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:824)
-	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:439)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:470)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:575)
-	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:717)
-	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1096)
-	at org.eclipse.jetty.server.Handler$Wrapper.handle(Handler.java:740)
-	at org.eclipse.jetty.server.handler.EventsHandler.handle(EventsHandler.java:81)
-	at org.eclipse.jetty.server.Server.handle(Server.java:182)
-	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:677)
-	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:416)
-	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:322)
-	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
-	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:492)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.epcRunTask(AdaptiveExecutionStrategy.java:428)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:401)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:255)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:204)
-	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:311)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:981)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1211)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1166)
+RuntimeLogger 2026-02-23 14:46:32,906 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3241] create table failed [1771857946113] - errCode = 2, detailMessage = replication num should be less than the number of available backends. replication num is 1, available backend num is 0
+RuntimeLogger 2026-02-23 14:46:32,906 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3257] drop table
+org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771857946111
+	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
+	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
+	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
+	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
+	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
+	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
+	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
+	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
+	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
+	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:317)
+	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
+RuntimeLogger 2026-02-23 14:46:32,927 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3241] create table failed [1771857946130] - errCode = 2, detailMessage = replication num should be less than the number of available backends. replication num is 1, available backend num is 0
+RuntimeLogger 2026-02-23 14:46:32,929 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3257] drop table
+org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771857946128
+	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
+	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
+	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
+	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
+	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
+	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
+	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
+	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
+	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
+	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:342)
+	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
+RuntimeLogger 2026-02-23 14:46:32,998 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3241] create table failed [] - errCode = 2, detailMessage = replication num should be less than the number of available backends. replication num is 1, available backend num is 0
+RuntimeLogger 2026-02-23 14:46:33,000 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3257] drop table
+org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771857946144
+	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
+	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
+	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
+	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
+	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
+	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
+	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
+	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
+	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
+	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:407)
+	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
+RuntimeLogger 2026-02-23 14:46:33,182 WARN (heartbeat-mgr-pool-3|207) [HeartbeatMgr$BackendHeartbeatHandler.pingOnce():377] backend heartbeat got exception
+org.apache.thrift.transport.TTransportException: java.net.ConnectException: Connection refused
+	at org.apache.thrift.transport.TSocket.open(TSocket.java:255)
+	at org.apache.doris.common.GenericPool$ThriftClientFactory.create(GenericPool.java:143)
+	at org.apache.doris.common.GenericPool$ThriftClientFactory.create(GenericPool.java:126)
+	at org.apache.commons.pool2.BaseKeyedPooledObjectFactory.makeObject(BaseKeyedPooledObjectFactory.java:62)
+	at org.apache.commons.pool2.impl.GenericKeyedObjectPool.create(GenericKeyedObjectPool.java:1012)
+	at org.apache.commons.pool2.impl.GenericKeyedObjectPool.borrowObject(GenericKeyedObjectPool.java:356)
+	at org.apache.commons.pool2.impl.GenericKeyedObjectPool.borrowObject(GenericKeyedObjectPool.java:277)
+	at org.apache.doris.common.GenericPool.borrowObject(GenericPool.java:95)
+	at org.apache.doris.system.HeartbeatMgr$BackendHeartbeatHandler.pingOnce(HeartbeatMgr.java:313)
+	at org.apache.doris.system.HeartbeatMgr$BackendHeartbeatHandler.call(HeartbeatMgr.java:280)
+	at org.apache.doris.system.HeartbeatMgr$BackendHeartbeatHandler.call(HeartbeatMgr.java:269)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-RuntimeLogger 2026-02-20 21:55:23,491 WARN (qtp2105183523-180|180) [RestApiExceptionHandler.unexpectedExceptionHandler():61] unexpected exception
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/security.txt.
-	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
-	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:527)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
-	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:751)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1622)
-	at org.eclipse.jetty.ee10.websocket.servlet.WebSocketUpgradeFilter.doFilter(WebSocketUpgradeFilter.java:195)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:205)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.apache.doris.httpv2.interceptor.ServletTraceIterceptor.doFilter(ServletTraceIterceptor.java:55)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:208)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:205)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:205)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:205)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1594)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1555)
-	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:824)
-	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:439)
-	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:470)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:575)
-	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:717)
-	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1096)
-	at org.eclipse.jetty.server.Handler$Wrapper.handle(Handler.java:740)
-	at org.eclipse.jetty.server.handler.EventsHandler.handle(EventsHandler.java:81)
-	at org.eclipse.jetty.server.Server.handle(Server.java:182)
-	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:677)
-	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:416)
-	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:322)
-	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
-	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:492)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.epcRunTask(AdaptiveExecutionStrategy.java:428)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:401)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:255)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:204)
-	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:311)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:981)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1211)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1166)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.thrift.transport.TSocket.open(TSocket.java:250)
+	... 14 more
+RuntimeLogger 2026-02-23 14:46:33,184 WARN (heartbeat-mgr-pool-3|207) [HeartbeatMgr$BackendHeartbeatHandler.pingOnce():377] backend heartbeat got exception
+org.apache.thrift.transport.TTransportException: java.net.ConnectException: Connection refused
+	at org.apache.thrift.transport.TSocket.open(TSocket.java:255)
+	at org.apache.doris.common.GenericPool$ThriftClientFactory.create(GenericPool.java:143)
+	at org.apache.doris.common.GenericPool$ThriftClientFactory.create(GenericPool.java:126)
+	at org.apache.commons.pool2.BaseKeyedPooledObjectFactory.makeObject(BaseKeyedPooledObjectFactory.java:62)
+	at org.apache.commons.pool2.impl.GenericKeyedObjectPool.create(GenericKeyedObjectPool.java:1012)
+	at org.apache.commons.pool2.impl.GenericKeyedObjectPool.borrowObject(GenericKeyedObjectPool.java:356)
+	at org.apache.commons.pool2.impl.GenericKeyedObjectPool.borrowObject(GenericKeyedObjectPool.java:277)
+	at org.apache.doris.common.GenericPool.borrowObject(GenericPool.java:95)
+	at org.apache.doris.system.HeartbeatMgr$BackendHeartbeatHandler.pingOnce(HeartbeatMgr.java:313)
+	at org.apache.doris.system.HeartbeatMgr$BackendHeartbeatHandler.call(HeartbeatMgr.java:283)
+	at org.apache.doris.system.HeartbeatMgr$BackendHeartbeatHandler.call(HeartbeatMgr.java:269)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.thrift.transport.TSocket.open(TSocket.java:250)
+	... 14 more
+RuntimeLogger 2026-02-23 14:46:33,185 WARN (heartbeat mgr|30) [HeartbeatMgr.runAfterCatalogReady():165] get bad heartbeat response: type: BACKEND, status: BAD, msg: java.net.ConnectException: Connection refused, beId: 1771857946070, beHost: 172.20.80.4, bePort: 0, httpPort: 0, brpcPort: 0, arrowFlightSqlPort: 0
+RuntimeLogger 2026-02-23 14:46:36,688 ERROR (mysql-nio-pool-2|200) [DistributePlanner.plan():119] Failed to build distribute plans
+org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
+	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:158)
+	at org.apache.doris.nereids.trees.plans.distribute.SelectedWorkers.tryToSelectRandomUsedWorker(SelectedWorkers.java:63)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.job.UnassignedQueryConstantJob.computeAssignedJobs(UnassignedQueryConstantJob.java:43)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.job.AssignedJobBuilder.buildJobs(AssignedJobBuilder.java:48)
+	at org.apache.doris.nereids.trees.plans.distribute.DistributePlanner.plan(DistributePlanner.java:96)
+	at org.apache.doris.nereids.NereidsPlanner.doDistribute(NereidsPlanner.java:716)
+	at org.apache.doris.nereids.NereidsPlanner.distribute(NereidsPlanner.java:687)
+	at org.apache.doris.nereids.NereidsPlanner.lambda$plan$0(NereidsPlanner.java:166)
+	at org.apache.doris.nereids.NereidsPlanner.planWithLock(NereidsPlanner.java:264)
+	at org.apache.doris.nereids.NereidsPlanner.plan(NereidsPlanner.java:162)
+	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:748)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:541)
+	at org.apache.doris.qe.StmtExecutor.queryRetry(StmtExecutor.java:500)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:485)
+	at org.apache.doris.qe.ConnectProcessor.executeQuery(ConnectProcessor.java:311)
+	at org.apache.doris.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:198)
+	at org.apache.doris.qe.MysqlConnectProcessor.handleQuery(MysqlConnectProcessor.java:231)
+	at org.apache.doris.qe.MysqlConnectProcessor.dispatch(MysqlConnectProcessor.java:259)
+	at org.apache.doris.qe.MysqlConnectProcessor.processOnce(MysqlConnectProcessor.java:403)
+	at org.apache.doris.mysql.ReadListener.lambda$handleEvent$0(ReadListener.java:52)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
+	at org.apache.doris.qe.SimpleScheduler.getHost(SimpleScheduler.java:297)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:154)
+	... 22 more
+RuntimeLogger 2026-02-23 14:46:36,688 WARN (mysql-nio-pool-2|200) [StmtExecutor.executeByNereids():751] Nereids plan query failed:
+SELECT 1
+org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
+	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:158)
+	at org.apache.doris.nereids.trees.plans.distribute.SelectedWorkers.tryToSelectRandomUsedWorker(SelectedWorkers.java:63)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.job.UnassignedQueryConstantJob.computeAssignedJobs(UnassignedQueryConstantJob.java:43)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.job.AssignedJobBuilder.buildJobs(AssignedJobBuilder.java:48)
+	at org.apache.doris.nereids.trees.plans.distribute.DistributePlanner.plan(DistributePlanner.java:96)
+	at org.apache.doris.nereids.NereidsPlanner.doDistribute(NereidsPlanner.java:716)
+	at org.apache.doris.nereids.NereidsPlanner.distribute(NereidsPlanner.java:687)
+	at org.apache.doris.nereids.NereidsPlanner.lambda$plan$0(NereidsPlanner.java:166)
+	at org.apache.doris.nereids.NereidsPlanner.planWithLock(NereidsPlanner.java:264)
+	at org.apache.doris.nereids.NereidsPlanner.plan(NereidsPlanner.java:162)
+	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:748)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:541)
+	at org.apache.doris.qe.StmtExecutor.queryRetry(StmtExecutor.java:500)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:485)
+	at org.apache.doris.qe.ConnectProcessor.executeQuery(ConnectProcessor.java:311)
+	at org.apache.doris.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:198)
+	at org.apache.doris.qe.MysqlConnectProcessor.handleQuery(MysqlConnectProcessor.java:231)
+	at org.apache.doris.qe.MysqlConnectProcessor.dispatch(MysqlConnectProcessor.java:259)
+	at org.apache.doris.qe.MysqlConnectProcessor.processOnce(MysqlConnectProcessor.java:403)
+	at org.apache.doris.mysql.ReadListener.lambda$handleEvent$0(ReadListener.java:52)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
+	at org.apache.doris.qe.SimpleScheduler.getHost(SimpleScheduler.java:297)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:154)
+	... 22 more
+RuntimeLogger 2026-02-23 14:46:36,689 WARN (mysql-nio-pool-2|200) [StmtExecutor.execute():552] Analyze failed. stmt[15, a0719fceaeb4433c-afb4649cea6418ec]
+org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
+	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:752)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:541)
+	at org.apache.doris.qe.StmtExecutor.queryRetry(StmtExecutor.java:500)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:485)
+	at org.apache.doris.qe.ConnectProcessor.executeQuery(ConnectProcessor.java:311)
+	at org.apache.doris.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:198)
+	at org.apache.doris.qe.MysqlConnectProcessor.handleQuery(MysqlConnectProcessor.java:231)
+	at org.apache.doris.qe.MysqlConnectProcessor.dispatch(MysqlConnectProcessor.java:259)
+	at org.apache.doris.qe.MysqlConnectProcessor.processOnce(MysqlConnectProcessor.java:403)
+	at org.apache.doris.mysql.ReadListener.lambda$handleEvent$0(ReadListener.java:52)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+RuntimeLogger 2026-02-23 14:46:38,016 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3241] create table failed [1771857946150] - errCode = 2, detailMessage = replication num should be less than the number of available backends. replication num is 1, available backend num is 0
+RuntimeLogger 2026-02-23 14:46:38,017 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3257] drop table
+org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771857946148
+	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
+	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
+	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
+	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
+	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
+	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
+	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
+	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
+	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
+	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:317)
+	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
+RuntimeLogger 2026-02-23 14:46:38,028 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3241] create table failed [1771857946167] - errCode = 2, detailMessage = replication num should be less than the number of available backends. replication num is 1, available backend num is 0
+RuntimeLogger 2026-02-23 14:46:38,029 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3257] drop table
+org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771857946165
+	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
+	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
+	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
+	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
+	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
+	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
+	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
+	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
+	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
+	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:342)
+	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
+RuntimeLogger 2026-02-23 14:46:38,076 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3241] create table failed [] - errCode = 2, detailMessage = replication num should be less than the number of available backends. replication num is 1, available backend num is 0
+RuntimeLogger 2026-02-23 14:46:38,076 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3257] drop table
+org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771857946181
+	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
+	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
+	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
+	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
+	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
+	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
+	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
+	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
+	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
+	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:407)
+	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
+RuntimeLogger 2026-02-23 14:46:41,718 ERROR (mysql-nio-pool-2|200) [DistributePlanner.plan():119] Failed to build distribute plans
+org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
+	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:158)
+	at org.apache.doris.nereids.trees.plans.distribute.SelectedWorkers.tryToSelectRandomUsedWorker(SelectedWorkers.java:63)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.job.UnassignedQueryConstantJob.computeAssignedJobs(UnassignedQueryConstantJob.java:43)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.job.AssignedJobBuilder.buildJobs(AssignedJobBuilder.java:48)
+	at org.apache.doris.nereids.trees.plans.distribute.DistributePlanner.plan(DistributePlanner.java:96)
+	at org.apache.doris.nereids.NereidsPlanner.doDistribute(NereidsPlanner.java:716)
+	at org.apache.doris.nereids.NereidsPlanner.distribute(NereidsPlanner.java:687)
+	at org.apache.doris.nereids.NereidsPlanner.lambda$plan$0(NereidsPlanner.java:166)
+	at org.apache.doris.nereids.NereidsPlanner.planWithLock(NereidsPlanner.java:264)
+	at org.apache.doris.nereids.NereidsPlanner.plan(NereidsPlanner.java:162)
+	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:748)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:541)
+	at org.apache.doris.qe.StmtExecutor.queryRetry(StmtExecutor.java:500)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:485)
+	at org.apache.doris.qe.ConnectProcessor.executeQuery(ConnectProcessor.java:311)
+	at org.apache.doris.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:198)
+	at org.apache.doris.qe.MysqlConnectProcessor.handleQuery(MysqlConnectProcessor.java:231)
+	at org.apache.doris.qe.MysqlConnectProcessor.dispatch(MysqlConnectProcessor.java:259)
+	at org.apache.doris.qe.MysqlConnectProcessor.processOnce(MysqlConnectProcessor.java:403)
+	at org.apache.doris.mysql.ReadListener.lambda$handleEvent$0(ReadListener.java:52)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
+	at org.apache.doris.qe.SimpleScheduler.getHost(SimpleScheduler.java:297)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:154)
+	... 22 more
+RuntimeLogger 2026-02-23 14:46:41,718 WARN (mysql-nio-pool-2|200) [StmtExecutor.executeByNereids():751] Nereids plan query failed:
+SELECT 1
+org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
+	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:158)
+	at org.apache.doris.nereids.trees.plans.distribute.SelectedWorkers.tryToSelectRandomUsedWorker(SelectedWorkers.java:63)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.job.UnassignedQueryConstantJob.computeAssignedJobs(UnassignedQueryConstantJob.java:43)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.job.AssignedJobBuilder.buildJobs(AssignedJobBuilder.java:48)
+	at org.apache.doris.nereids.trees.plans.distribute.DistributePlanner.plan(DistributePlanner.java:96)
+	at org.apache.doris.nereids.NereidsPlanner.doDistribute(NereidsPlanner.java:716)
+	at org.apache.doris.nereids.NereidsPlanner.distribute(NereidsPlanner.java:687)
+	at org.apache.doris.nereids.NereidsPlanner.lambda$plan$0(NereidsPlanner.java:166)
+	at org.apache.doris.nereids.NereidsPlanner.planWithLock(NereidsPlanner.java:264)
+	at org.apache.doris.nereids.NereidsPlanner.plan(NereidsPlanner.java:162)
+	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:748)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:541)
+	at org.apache.doris.qe.StmtExecutor.queryRetry(StmtExecutor.java:500)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:485)
+	at org.apache.doris.qe.ConnectProcessor.executeQuery(ConnectProcessor.java:311)
+	at org.apache.doris.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:198)
+	at org.apache.doris.qe.MysqlConnectProcessor.handleQuery(MysqlConnectProcessor.java:231)
+	at org.apache.doris.qe.MysqlConnectProcessor.dispatch(MysqlConnectProcessor.java:259)
+	at org.apache.doris.qe.MysqlConnectProcessor.processOnce(MysqlConnectProcessor.java:403)
+	at org.apache.doris.mysql.ReadListener.lambda$handleEvent$0(ReadListener.java:52)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.apache.doris.common.UserException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
+	at org.apache.doris.qe.SimpleScheduler.getHost(SimpleScheduler.java:297)
+	at org.apache.doris.nereids.trees.plans.distribute.worker.BackendDistributedPlanWorkerManager.randomAvailableWorker(BackendDistributedPlanWorkerManager.java:154)
+	... 22 more
+RuntimeLogger 2026-02-23 14:46:41,718 WARN (mysql-nio-pool-2|200) [StmtExecutor.execute():552] Analyze failed. stmt[16, 1376f63b02f14236-be0671e3ba61abef]
+org.apache.doris.common.NereidsException: errCode = 2, detailMessage = No backend available as scan node, please check the status of your backends.[1771857946070: not alive]
+	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:752)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:541)
+	at org.apache.doris.qe.StmtExecutor.queryRetry(StmtExecutor.java:500)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:485)
+	at org.apache.doris.qe.ConnectProcessor.executeQuery(ConnectProcessor.java:311)
+	at org.apache.doris.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:198)
+	at org.apache.doris.qe.MysqlConnectProcessor.handleQuery(MysqlConnectProcessor.java:231)
+	at org.apache.doris.qe.MysqlConnectProcessor.dispatch(MysqlConnectProcessor.java:259)
+	at org.apache.doris.qe.MysqlConnectProcessor.processOnce(MysqlConnectProcessor.java:403)
+	at org.apache.doris.mysql.ReadListener.lambda$handleEvent$0(ReadListener.java:52)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+RuntimeLogger 2026-02-23 14:46:43,098 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3241] create table failed [1771857946187] - errCode = 2, detailMessage = replication num should be less than the number of available backends. replication num is 1, available backend num is 0
+RuntimeLogger 2026-02-23 14:46:43,098 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3257] drop table
+org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771857946185
+	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
+	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
+	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
+	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
+	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
+	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
+	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
+	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
+	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
+	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:317)
+	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
+RuntimeLogger 2026-02-23 14:46:43,115 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3241] create table failed [1771857946204] - errCode = 2, detailMessage = replication num should be less than the number of available backends. replication num is 1, available backend num is 0
+RuntimeLogger 2026-02-23 14:46:43,115 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3257] drop table
+org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771857946202
+	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
+	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
+	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
+	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
+	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
+	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
+	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
+	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
+	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
+	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:342)
+	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
+RuntimeLogger 2026-02-23 14:46:43,260 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3241] create table failed [] - errCode = 2, detailMessage = replication num should be less than the number of available backends. replication num is 1, available backend num is 0
+RuntimeLogger 2026-02-23 14:46:43,261 WARN (InternalSchemaInitializer|160) [InternalCatalog.createOlapTable():3257] drop table
+org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableId=1771857946218
+	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$2(DatabaseIf.java:172)
+	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:156)
+	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:172)
+	at org.apache.doris.datasource.InternalCatalog.dropTable(InternalCatalog.java:1040)
+	at org.apache.doris.datasource.InternalCatalog.createOlapTable(InternalCatalog.java:3251)
+	at org.apache.doris.datasource.InternalCatalog.createTable(InternalCatalog.java:1242)
+	at org.apache.doris.catalog.Env.createTable(Env.java:3480)
+	at org.apache.doris.nereids.trees.plans.commands.CreateTableCommand.run(CreateTableCommand.java:90)
+	at org.apache.doris.catalog.InternalSchemaInitializer.createTable(InternalSchemaInitializer.java:516)
+	at org.apache.doris.catalog.InternalSchemaInitializer.createTbl(InternalSchemaInitializer.java:407)
+	at org.apache.doris.catalog.InternalSchemaInitializer.run(InternalSchemaInitializer.java:92)
+RuntimeLogger 2026-02-23 14:46:43,687 WARN (thrift-server-pool-2|214) [FrontendServiceImpl.loadTxnBegin():1239] failed to begin
+org.apache.doris.common.MetaNotFoundException: errCode = 7, detailMessage = table not found, tableName=audit_log
+	at org.apache.doris.catalog.DatabaseIf.lambda$getTableOrMetaException$0(DatabaseIf.java:162)
+	at org.apache.doris.catalog.DatabaseIf.getTableOrException(DatabaseIf.java:139)
+	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:162)
+	at org.apache.doris.catalog.DatabaseIf.getTableOrMetaException(DatabaseIf.java:177)
+	at org.apache.doris.service.FrontendServiceImpl.loadTxnBeginImpl(FrontendServiceImpl.java:1284)
+	at org.apache.doris.service.FrontendServiceImpl.loadTxnBegin(FrontendServiceImpl.java:1227)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.doris.service.FeServer.lambda$start$0(FeServer.java:60)
+	at jdk.proxy2/jdk.proxy2.$Proxy27.loadTxnBegin(Unknown Source)
+	at org.apache.doris.thrift.FrontendService$Processor$loadTxnBegin.getResult(FrontendService.java:4457)
+	at org.apache.doris.thrift.FrontendService$Processor$loadTxnBegin.getResult(FrontendService.java:4437)
+	at org.apache.thrift.ProcessFunction.process(ProcessFunction.java:38)
+	at org.apache.thrift.TBaseProcessor.process(TBaseProcessor.java:38)
+	at org.apache.thrift.server.TThreadPoolServer$WorkerProcess.run(TThreadPoolServer.java:250)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+RuntimeLogger 2026-02-23 14:46:47,010 WARN (mysql-nio-pool-2|200) [StmtExecutor.execute():552] Analyze failed. stmt[18, c21e0c6184de467e-ab45b3df5c36e0ce]
+org.apache.doris.common.NereidsException: errCode = 2, detailMessage = Same backend already exists[172.20.80.4:9050]
+	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:704)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:541)
+	at org.apache.doris.qe.StmtExecutor.queryRetry(StmtExecutor.java:500)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:485)
+	at org.apache.doris.qe.ConnectProcessor.executeQuery(ConnectProcessor.java:311)
+	at org.apache.doris.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:198)
+	at org.apache.doris.qe.MysqlConnectProcessor.handleQuery(MysqlConnectProcessor.java:231)
+	at org.apache.doris.qe.MysqlConnectProcessor.dispatch(MysqlConnectProcessor.java:259)
+	at org.apache.doris.qe.MysqlConnectProcessor.processOnce(MysqlConnectProcessor.java:403)
+	at org.apache.doris.mysql.ReadListener.lambda$handleEvent$0(ReadListener.java:52)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.apache.doris.common.AnalysisException: errCode = 2, detailMessage = Same backend already exists[172.20.80.4:9050]
+	... 13 more
+Caused by: org.apache.doris.common.DdlException: errCode = 2, detailMessage = Same backend already exists[172.20.80.4:9050]
+	at org.apache.doris.system.SystemInfoService.addBackends(SystemInfoService.java:192)
+	at org.apache.doris.alter.SystemHandler.processForNereids(SystemHandler.java:236)
+	at org.apache.doris.alter.AlterHandler.processForNereids(AlterHandler.java:195)
+	at org.apache.doris.alter.Alter.processAlterSystem(Alter.java:921)
+	at org.apache.doris.catalog.Env.alterSystem(Env.java:6240)
+	at org.apache.doris.nereids.trees.plans.commands.AlterSystemCommand.doRun(AlterSystemCommand.java:96)
+	at org.apache.doris.nereids.trees.plans.commands.AlterCommand.run(AlterCommand.java:40)
+	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:684)
+	... 12 more
+RuntimeLogger 2026-02-23 14:47:49,271 WARN (mysql-nio-pool-2|200) [StmtExecutor.execute():552] Analyze failed. stmt[39, 1acc176dda4a410d-b4aa614f43549e24]
+org.apache.doris.common.NereidsException: errCode = 2, detailMessage = Storage Vault is only supported for cloud mode
+	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:704)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:541)
+	at org.apache.doris.qe.StmtExecutor.queryRetry(StmtExecutor.java:500)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:485)
+	at org.apache.doris.qe.ConnectProcessor.executeQuery(ConnectProcessor.java:311)
+	at org.apache.doris.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:198)
+	at org.apache.doris.qe.MysqlConnectProcessor.handleQuery(MysqlConnectProcessor.java:231)
+	at org.apache.doris.qe.MysqlConnectProcessor.dispatch(MysqlConnectProcessor.java:259)
+	at org.apache.doris.qe.MysqlConnectProcessor.processOnce(MysqlConnectProcessor.java:403)
+	at org.apache.doris.mysql.ReadListener.lambda$handleEvent$0(ReadListener.java:52)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.apache.doris.common.AnalysisException: errCode = 2, detailMessage = Storage Vault is only supported for cloud mode
+	... 13 more
+Caused by: org.apache.doris.common.AnalysisException: errCode = 2, detailMessage = Storage Vault is only supported for cloud mode
+	at org.apache.doris.nereids.trees.plans.commands.CreateStorageVaultCommand.validate(CreateStorageVaultCommand.java:79)
+	at org.apache.doris.nereids.trees.plans.commands.CreateStorageVaultCommand.run(CreateStorageVaultCommand.java:70)
+	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:684)
+	... 12 more
+RuntimeLogger 2026-02-23 14:47:49,316 WARN (mysql-nio-pool-2|200) [StmtExecutor.execute():552] Analyze failed. stmt[40, d436c1e924414f18-9fec48396ddb6c22]
+org.apache.doris.common.NereidsException: errCode = 2, detailMessage = Storage Vault is only supported for cloud mode
+	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:712)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:541)
+	at org.apache.doris.qe.StmtExecutor.queryRetry(StmtExecutor.java:500)
+	at org.apache.doris.qe.StmtExecutor.execute(StmtExecutor.java:485)
+	at org.apache.doris.qe.ConnectProcessor.executeQuery(ConnectProcessor.java:311)
+	at org.apache.doris.qe.ConnectProcessor.handleQuery(ConnectProcessor.java:198)
+	at org.apache.doris.qe.MysqlConnectProcessor.handleQuery(MysqlConnectProcessor.java:231)
+	at org.apache.doris.qe.MysqlConnectProcessor.dispatch(MysqlConnectProcessor.java:259)
+	at org.apache.doris.qe.MysqlConnectProcessor.processOnce(MysqlConnectProcessor.java:403)
+	at org.apache.doris.mysql.ReadListener.lambda$handleEvent$0(ReadListener.java:52)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.apache.doris.common.AnalysisException: errCode = 2, detailMessage = Storage Vault is only supported for cloud mode
+	... 13 more
+Caused by: org.apache.doris.nereids.exceptions.AnalysisException: Storage Vault is only supported for cloud mode
+	at org.apache.doris.nereids.trees.plans.commands.SetDefaultStorageVaultCommand.run(SetDefaultStorageVaultCommand.java:48)
+	at org.apache.doris.qe.StmtExecutor.executeByNereids(StmtExecutor.java:684)
+	... 12 more
+RuntimeLogger 2026-02-23 14:55:36,843 ERROR (thrift-server-pool-3|221) [TThreadPoolServer$WorkerProcess.run():260] Thrift Error occurred during processing of message.
+org.apache.thrift.transport.TTransportException: java.net.SocketException: Connection reset
+	at org.apache.thrift.transport.TIOStreamTransport.read(TIOStreamTransport.java:181)
+	at org.apache.thrift.transport.TTransport.readAll(TTransport.java:109)
+	at org.apache.thrift.protocol.TBinaryProtocol.readAll(TBinaryProtocol.java:464)
+	at org.apache.thrift.protocol.TBinaryProtocol.readI32(TBinaryProtocol.java:362)
+	at org.apache.thrift.protocol.TBinaryProtocol.readMessageBegin(TBinaryProtocol.java:245)
+	at org.apache.thrift.TBaseProcessor.process(TBaseProcessor.java:27)
+	at org.apache.thrift.server.TThreadPoolServer$WorkerProcess.run(TThreadPoolServer.java:250)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:323)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/java.io.BufferedInputStream.fill(BufferedInputStream.java:244)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:343)
+	at org.apache.thrift.transport.TIOStreamTransport.read(TIOStreamTransport.java:177)
+	... 9 more
+RuntimeLogger 2026-02-23 14:55:36,843 ERROR (thrift-server-pool-4|233) [TThreadPoolServer$WorkerProcess.run():260] Thrift Error occurred during processing of message.
+org.apache.thrift.transport.TTransportException: java.net.SocketException: Connection reset
+	at org.apache.thrift.transport.TIOStreamTransport.read(TIOStreamTransport.java:181)
+	at org.apache.thrift.transport.TTransport.readAll(TTransport.java:109)
+	at org.apache.thrift.protocol.TBinaryProtocol.readAll(TBinaryProtocol.java:464)
+	at org.apache.thrift.protocol.TBinaryProtocol.readI32(TBinaryProtocol.java:362)
+	at org.apache.thrift.protocol.TBinaryProtocol.readMessageBegin(TBinaryProtocol.java:245)
+	at org.apache.thrift.TBaseProcessor.process(TBaseProcessor.java:27)
+	at org.apache.thrift.server.TThreadPoolServer$WorkerProcess.run(TThreadPoolServer.java:250)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:323)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/java.io.BufferedInputStream.fill(BufferedInputStream.java:244)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:343)
+	at org.apache.thrift.transport.TIOStreamTransport.read(TIOStreamTransport.java:177)
+	... 9 more
+RuntimeLogger 2026-02-23 14:55:36,843 ERROR (thrift-server-pool-0|212) [TThreadPoolServer$WorkerProcess.run():260] Thrift Error occurred during processing of message.
+org.apache.thrift.transport.TTransportException: java.net.SocketException: Connection reset
+	at org.apache.thrift.transport.TIOStreamTransport.read(TIOStreamTransport.java:181)
+	at org.apache.thrift.transport.TTransport.readAll(TTransport.java:109)
+	at org.apache.thrift.protocol.TBinaryProtocol.readAll(TBinaryProtocol.java:464)
+	at org.apache.thrift.protocol.TBinaryProtocol.readI32(TBinaryProtocol.java:362)
+	at org.apache.thrift.protocol.TBinaryProtocol.readMessageBegin(TBinaryProtocol.java:245)
+	at org.apache.thrift.TBaseProcessor.process(TBaseProcessor.java:27)
+	at org.apache.thrift.server.TThreadPoolServer$WorkerProcess.run(TThreadPoolServer.java:250)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:323)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/java.io.BufferedInputStream.fill(BufferedInputStream.java:244)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:343)
+	at org.apache.thrift.transport.TIOStreamTransport.read(TIOStreamTransport.java:177)
+	... 9 more
+RuntimeLogger 2026-02-23 14:55:36,843 ERROR (thrift-server-pool-2|214) [TThreadPoolServer$WorkerProcess.run():260] Thrift Error occurred during processing of message.
+org.apache.thrift.transport.TTransportException: java.net.SocketException: Connection reset
+	at org.apache.thrift.transport.TIOStreamTransport.read(TIOStreamTransport.java:181)
+	at org.apache.thrift.transport.TTransport.readAll(TTransport.java:109)
+	at org.apache.thrift.protocol.TBinaryProtocol.readAll(TBinaryProtocol.java:464)
+	at org.apache.thrift.protocol.TBinaryProtocol.readI32(TBinaryProtocol.java:362)
+	at org.apache.thrift.protocol.TBinaryProtocol.readMessageBegin(TBinaryProtocol.java:245)
+	at org.apache.thrift.TBaseProcessor.process(TBaseProcessor.java:27)
+	at org.apache.thrift.server.TThreadPoolServer$WorkerProcess.run(TThreadPoolServer.java:250)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:323)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/java.io.BufferedInputStream.fill(BufferedInputStream.java:244)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:343)
+	at org.apache.thrift.transport.TIOStreamTransport.read(TIOStreamTransport.java:177)
+	... 9 more
+RuntimeLogger 2026-02-23 14:55:36,843 ERROR (thrift-server-pool-1|213) [TThreadPoolServer$WorkerProcess.run():260] Thrift Error occurred during processing of message.
+org.apache.thrift.transport.TTransportException: java.net.SocketException: Connection reset
+	at org.apache.thrift.transport.TIOStreamTransport.read(TIOStreamTransport.java:181)
+	at org.apache.thrift.transport.TTransport.readAll(TTransport.java:109)
+	at org.apache.thrift.protocol.TBinaryProtocol.readAll(TBinaryProtocol.java:464)
+	at org.apache.thrift.protocol.TBinaryProtocol.readI32(TBinaryProtocol.java:362)
+	at org.apache.thrift.protocol.TBinaryProtocol.readMessageBegin(TBinaryProtocol.java:245)
+	at org.apache.thrift.TBaseProcessor.process(TBaseProcessor.java:27)
+	at org.apache.thrift.server.TThreadPoolServer$WorkerProcess.run(TThreadPoolServer.java:250)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:323)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/java.io.BufferedInputStream.fill(BufferedInputStream.java:244)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:343)
+	at org.apache.thrift.transport.TIOStreamTransport.read(TIOStreamTransport.java:177)
+	... 9 more

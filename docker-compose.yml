@@ -11,6 +11,8 @@ services:
     image: "apache/doris:fe-4.0.3"
     container_name: "doris-fe-01"
     hostname: "fe-01"
+    cpus: 1.0
+    mem_limit: 1536m
     environment:
       - FE_SERVERS=fe1:172.20.80.2:9010
       - FE_ID=1
@@ -62,8 +64,9 @@ services:
   doris-be-01:
     image: "apache/doris:be-4.0.3"
     container_name: "doris-be-01"
-
     hostname: "be-01"
+    cpus: 1.5
+    mem_limit: 2g
     depends_on:
       - doris-fe-01
     environment:
@@ -83,6 +86,8 @@ services:
     image: minio/minio:latest
     container_name: "minio"
     hostname: "minio"
+    cpus: 0.5
+    mem_limit: 256m
     ports:
       - "9000:9000" 
       - "9001:9001"   
@@ -102,14 +107,19 @@ services:
       context: ./data-generator
       dockerfile: Dockerfile
     container_name: "doris-data-generator"
+    profiles: ["generate"]
+    cpus: 0.5
+    mem_limit: 128m
     depends_on:
       - doris-fe-01
-      - minio
     networks:
       doris_net:
         ipv4_address: 172.20.80.14
     environment:
       - DORIS_FE_HOST=172.20.80.2
+      - ROWS_PER_BATCH=100000
+      - FILES_PER_BATCH=3
+      - SLEEP_SECONDS=10
 
   # prometheus:
   #   image: prom/prometheus:latest
@@ -154,6 +164,8 @@ services:
     image: foundationdb/foundationdb:7.1.26
     container_name: fdb
     hostname: fdb
+    cpus: 0.5
+    mem_limit: 256m
     ports:
       - "4500:4500"
     environment:
@@ -191,6 +203,8 @@ services:
     image: apache/doris:ms-4.0.3 
     container_name: doris-ms
     hostname: ms
+    cpus: 0.5
+    mem_limit: 512m
     depends_on:
       - fdb
       - minio
@@ -207,8 +221,6 @@ services:
     networks:
       doris_net:
         ipv4_address: 172.20.80.21
-
-
 
 
 
@@ -229,7 +241,7 @@ services:
   #     - "8041:8040"
   #   volumes:
   #     - ./be-data-02/storage:/opt/apache-doris/be/storage
-  #     - ./be-data-02/log/opt/apache-doris/be/log
+  #     - ./be-data-02/log:/opt/apache-doris/be/log
   #     # - ./confs/be.conf:/opt/apache-doris/be/conf/be.conf
   #   networks:
   #     doris_net:

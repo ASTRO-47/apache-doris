@@ -2,6 +2,12 @@ global:
   scrape_interval: 15s
 
 scrape_configs:
-  - job_name: 'cadvisor'
+  - job_name: 'doris-fe'
+    metrics_path: '/metrics'
     static_configs:
-      - targets: ['cadvisor:8080']
+      - targets: ['doris-fe-01:8030']
+
+  - job_name: 'doris-be'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['doris-be-01:8040', 'doris-be-02:8040']

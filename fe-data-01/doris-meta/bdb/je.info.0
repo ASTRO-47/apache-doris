@@ -1,17 +1,78 @@
-2026-02-23 14:45:45.593 UTC INFO [fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3] No server auth method
-2026-02-23 14:45:45.605 UTC INFO [fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3] Started ServiceDispatcher. HostPort=fe-01:9010
-2026-02-23 14:45:45.606 UTC INFO [fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3] DataChannel factory: com.sleepycat.je.rep.utilint.net.SimpleChannelFactory
-2026-02-23 14:45:45.809 UTC INFO [fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3] DTVLSN at start:0
-2026-02-23 14:45:45.860 UTC INFO [fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3] node:NullNode(-1) state change from DETACHED to UNKNOWN
-2026-02-23 14:45:45.901 UTC INFO [fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3] Current group size: 0
-2026-02-23 14:45:45.902 UTC INFO [fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3] New node fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3(-1) unknown to rep group
-2026-02-23 14:45:45.903 UTC INFO [fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3] Master changed to fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3
-2026-02-23 14:45:45.904 UTC INFO [fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3] Nascent group. fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3 is master by virtue of being the first node.
-2026-02-23 14:45:45.904 UTC INFO [fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3] node:fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3(1) state change from UNKNOWN to MASTER
-2026-02-23 14:45:45.988 UTC INFO [fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3] Successfully added node:fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3(1) HostPort = 172.20.80.2: 9010 [ELECTABLE]
-2026-02-23 14:45:45.997 UTC INFO [fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3] Updated minimum JE group version to 7.5.0
-2026-02-23 14:45:45.999 UTC INFO [fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3] Node fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3 started
-2026-02-23 14:45:45.999 UTC INFO [fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3] node:NullNode(-1) state change from MASTER to UNKNOWN
-2026-02-23 14:45:46.000 UTC INFO [fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3] node:fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3(1) state change from UNKNOWN to MASTER
-2026-02-23 14:45:46.000 UTC INFO [fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3] Feeder manager accepting requests.
-2026-02-23 14:45:46.002 UTC INFO [fe_9047c464_ba40_4182_ab5f_7cde5cadb5b3] Joining group as master
+2026-02-24 14:34:03.555 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] No server auth method
+2026-02-24 14:34:03.559 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Started ServiceDispatcher. HostPort=fe-01:9010
+2026-02-24 14:34:03.559 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] DataChannel factory: com.sleepycat.je.rep.utilint.net.SimpleChannelFactory
+2026-02-24 14:34:03.594 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] DTVLSN at start:0
+2026-02-24 14:34:03.595 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2026-02-24 14:34:03.611 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Current group size: 0
+2026-02-24 14:34:03.611 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] New node fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173(-1) unknown to rep group
+2026-02-24 14:34:03.613 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Master changed to fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173
+2026-02-24 14:34:03.613 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Nascent group. fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173 is master by virtue of being the first node.
+2026-02-24 14:34:03.613 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] node:fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173(1) state change from UNKNOWN to MASTER
+2026-02-24 14:34:03.633 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Successfully added node:fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173(1) HostPort = 172.20.80.2: 9010 [ELECTABLE]
+2026-02-24 14:34:03.642 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Updated minimum JE group version to 7.5.0
+2026-02-24 14:34:03.643 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Node fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173 started
+2026-02-24 14:34:03.643 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] node:NullNode(-1) state change from MASTER to UNKNOWN
+2026-02-24 14:34:03.644 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] node:fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173(1) state change from UNKNOWN to MASTER
+2026-02-24 14:34:03.644 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Feeder manager accepting requests.
+2026-02-24 14:34:03.645 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Joining group as master
+2026-02-25 00:00:00.001 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Start verify of data files
+2026-02-25 00:00:53.222 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] End verify of data files
+2026-02-25 00:00:53.222 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Start verify all databases
+2026-02-25 00:00:53.423 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] End verify all databases
+2026-02-25 12:15:10.480 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] No server auth method
+2026-02-25 12:15:10.485 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Started ServiceDispatcher. HostPort=fe-01:9010
+2026-02-25 12:15:10.486 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] DataChannel factory: com.sleepycat.je.rep.utilint.net.SimpleChannelFactory
+2026-02-25 12:15:10.575 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] DTVLSN at start:55,577
+2026-02-25 12:15:10.577 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2026-02-25 12:15:10.599 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Current group size: 1
+2026-02-25 12:15:10.599 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Existing node fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173 querying for a current master.
+2026-02-25 12:15:10.613 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Node fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173 started
+2026-02-25 12:15:10.614 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Election initiated; election #1
+2026-02-25 12:15:10.616 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Started election thread Wed Feb 25 12:15:10 UTC 2026
+2026-02-25 12:15:10.639 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Winning proposal: Proposal(0000019c94b97f18:80a05e34596c52179b6105b73480b614:00000001) Value: Value:172.20.80.2$$$9010$$$fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173$$$1
+2026-02-25 12:15:10.641 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Master changed to fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173
+2026-02-25 12:15:10.641 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Election finished. Elapsed time: 27ms
+2026-02-25 12:15:10.642 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Election thread exited. Group master: fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173(1)
+2026-02-25 12:15:10.642 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] node:fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173(1) state change from UNKNOWN to MASTER
+2026-02-25 12:15:10.642 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Feeder manager accepting requests.
+2026-02-25 12:15:10.643 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Joining group as master
+2026-02-25 13:04:13.246 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] No server auth method
+2026-02-25 13:04:13.252 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Started ServiceDispatcher. HostPort=fe-01:9010
+2026-02-25 13:04:13.252 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] DataChannel factory: com.sleepycat.je.rep.utilint.net.SimpleChannelFactory
+2026-02-25 13:04:13.291 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] DTVLSN at start:57,034
+2026-02-25 13:04:13.292 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2026-02-25 13:04:13.311 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Current group size: 1
+2026-02-25 13:04:13.311 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Existing node fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173 querying for a current master.
+2026-02-25 13:04:13.327 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Node fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173 started
+2026-02-25 13:04:13.327 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Election initiated; election #1
+2026-02-25 13:04:13.329 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Started election thread Wed Feb 25 13:04:13 UTC 2026
+2026-02-25 13:04:13.334 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Winning proposal: Proposal(0000019c94e66611:2795ef3f9daec83e2e39ce0293be31c6:00000001) Value: Value:172.20.80.2$$$9010$$$fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173$$$1
+2026-02-25 13:04:13.336 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Master changed to fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173
+2026-02-25 13:04:13.336 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Election finished. Elapsed time: 9ms
+2026-02-25 13:04:13.336 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Election thread exited. Group master: fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173(1)
+2026-02-25 13:04:13.337 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] node:fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173(1) state change from UNKNOWN to MASTER
+2026-02-25 13:04:13.338 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Feeder manager accepting requests.
+2026-02-25 13:04:13.339 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Joining group as master
+2026-02-25 13:38:31.640 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] No server auth method
+2026-02-25 13:38:31.643 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Started ServiceDispatcher. HostPort=fe-01:9010
+2026-02-25 13:38:31.643 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] DataChannel factory: com.sleepycat.je.rep.utilint.net.SimpleChannelFactory
+2026-02-25 13:38:31.683 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] DTVLSN at start:58,069
+2026-02-25 13:38:31.685 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] node:NullNode(-1) state change from DETACHED to UNKNOWN
+2026-02-25 13:38:31.702 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Current group size: 1
+2026-02-25 13:38:31.702 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Existing node fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173 querying for a current master.
+2026-02-25 13:38:31.713 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Node fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173 started
+2026-02-25 13:38:31.714 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Election initiated; election #1
+2026-02-25 13:38:31.718 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Started election thread Wed Feb 25 13:38:31 UTC 2026
+2026-02-25 13:38:31.724 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Winning proposal: Proposal(0000019c9505cea6:f94f504ceb9b7f7e1368cd2f3968f93d:00000001) Value: Value:172.20.80.2$$$9010$$$fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173$$$1
+2026-02-25 13:38:31.726 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Master changed to fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173
+2026-02-25 13:38:31.726 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Election finished. Elapsed time: 12ms
+2026-02-25 13:38:31.727 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Election thread exited. Group master: fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173(1)
+2026-02-25 13:38:31.727 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] node:fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173(1) state change from UNKNOWN to MASTER
+2026-02-25 13:38:31.727 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Feeder manager accepting requests.
+2026-02-25 13:38:31.729 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Joining group as master
+2026-02-25 13:39:32.762 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Start DB remove/truncate scan, id=1 dbId=-259 dbName=1
+2026-02-25 13:39:32.793 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] End DB remove/truncate scan, id=1 scanned=22806 dbId=-259 dbName=1
+2026-02-26 00:00:00.001 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Start verify of data files
+2026-02-26 00:02:20.999 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] End verify of data files
+2026-02-26 00:02:20.999 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] Start verify all databases
+2026-02-26 00:02:21.240 UTC INFO [fe_afa2a5c7_d77f_49c5_abc5_c30fc039f173] End verify all databases

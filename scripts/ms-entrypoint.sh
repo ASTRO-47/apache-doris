@@ -1,30 +1,22 @@
 #!/bin/bash
+# Meta Service entrypoint - injects FDB cluster config then starts MS
+
 set -e
 
-CONF_FILE="/opt/apache-doris/ms/conf/doris_cloud.conf"
-FDB_CLUSTER_FILE="/var/fdb/fdb.cluster"
+FDB_CLUSTER="/var/fdb/fdb.cluster"
+CONF="/opt/apache-doris/ms/conf/doris_cloud.conf"
 
-# ── 1. Wait for FDB cluster file ──
-echo "[ms-entrypoint] Waiting for FDB cluster file..."
-until [ -f "$FDB_CLUSTER_FILE" ]; do
-  sleep 1
-done
+# Wait for FDB to create its cluster file
+echo "Waiting for FDB..."
+until [ -f "$FDB_CLUSTER" ]; do sleep 1; done
 
-# ── 2. Read FDB cluster string and inject into config ──
-CLUSTER_STR=$(grep -v '^#' "$FDB_CLUSTER_FILE" | head -1)
-echo "[ms-entrypoint] Found FDB cluster string: $CLUSTER_STR"
+# Read FDB cluster string and inject into config
+CLUSTER=$(grep -v '^#' "$FDB_CLUSTER" | head -1)
+echo "FDB cluster: $CLUSTER"
 
-# sed -i doesn't work on bind-mounted files, so copy → sed → write back
-cp "$CONF_FILE" /tmp/doris_cloud.conf
-sed "s|^fdb_cluster=.*|fdb_cluster=${CLUSTER_STR}|" /tmp/doris_cloud.conf > "$CONF_FILE"
-rm /tmp/doris_cloud.conf
+# Update config (bind mounts need copy→sed→write)
+cp "$CONF" /tmp/doris_cloud.conf
+sed "s|^fdb_cluster=.*|fdb_cluster=${CLUSTER}|" /tmp/doris_cloud.conf > "$CONF"
 
-echo "[ms-entrypoint] Updated config:"
-cat "$CONF_FILE"
-
-# ── 3. Set correct JAVA_HOME ──
-export JAVA_HOME=/usr/lib/jvm/java
-
-# ── 4. Start Meta Service ──
-echo "[ms-entrypoint] Starting Meta Service..."
+echo "Config updated, starting Meta Service..."
 exec /opt/apache-doris/ms/bin/start.sh --console

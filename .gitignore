@@ -1,0 +1,6 @@
+fe-data-*/
+be-data-*/
+minio-data/
+__pycache__/
+*.json
+*.log

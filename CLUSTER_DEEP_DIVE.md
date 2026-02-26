@@ -34,6 +34,7 @@ Your cluster runs Apache Doris in **Storage-Compute Separation** mode (introduce
 |------------------|------------------------------------|---------------|-------------------------------|---------|
 | `doris-fe-01`    | `apache/doris:fe-4.0.3`           | `172.20.80.2` | Frontend Master (SQL engine)  | Healthy |
 | `doris-be-01`    | `apache/doris:be-4.0.3`           | `172.20.80.4` | Backend (compute + local cache)| Up      |
+| `doris-be-02`    | `apache/doris:be-4.0.3`           | `172.20.80.5` | Backend (compute + local cache)| Up      |
 | `doris-ms`       | `apache/doris:ms-4.0.3`           | `172.20.80.21`| Meta Service                  | Up      |
 | `fdb`            | `foundationdb/foundationdb:7.1.26`| `172.20.80.20`| FoundationDB (metadata store) | Up      |
 | `minio`          | `minio/minio:latest`              | `172.20.80.10`| S3-compatible object storage  | Up      |
@@ -161,10 +162,10 @@ docker stop doris-be-02
 │              ┌─────────────┼─────────────┐                     │             │
 │              │ Query Plan  │  Metadata   │                     │             │
 │              ▼             ▼             ▼                      │             │
-│  ┌───────────────────┐  ┌─────────────────────────────┐        │             │
-│  │  BACKEND (BE)     │  │   META SERVICE (MS)         │        │             │
-│  │  172.20.80.4      │  │   172.20.80.21              │        │             │
-│  │  doris-be-01      │  │   doris-ms                  │        │             │
+│  ┌───────────────────┐  ┌─────────────────────────────┐        │
+│  │  BACKENDS (BE)    │  │   META SERVICE (MS)         │        │
+│  │  172.20.80.4/.5   │  │   172.20.80.21              │        │
+│  │  doris-be-01/02   │  │   doris-ms                  │        │             │
 │  │                   │  │                             │        │             │
 │  │  ┌─────────────┐  │  │  ┌────────────┐            │        │             │
 │  │  │  Compute    │  │  │  │  Tablet    │            │        │             │
@@ -492,6 +493,7 @@ All containers run on a dedicated Docker bridge network with static IPs:
   │                                                      │
   │   172.20.80.2  ─── doris-fe-01 (FE Master)          │
   │   172.20.80.4  ─── doris-be-01 (BE Node 1)          │
+  │   172.20.80.5  ─── doris-be-02 (BE Node 2)          │
   │   172.20.80.10 ─── minio       (Object Storage)     │
   │   172.20.80.14 ─── data-generator                    │
   │   172.20.80.20 ─── fdb         (FoundationDB)       │
@@ -499,7 +501,7 @@ All containers run on a dedicated Docker bridge network with static IPs:
   │                                                      │
   │   Reserved (commented out):                          │
   │   172.20.80.3  ─── doris-fe-02 (FE Follower)        │
-  │   172.20.80.5  ─── doris-be-02 (BE Node 2)          │
+  │   172.20.80.7  ─── doris-fe-03 (FE Follower)        │
   │   172.20.80.6  ─── doris-be-03 (BE Node 3)          │
   │   172.20.80.11 ─── prometheus                        │
   │   172.20.80.12 ─── cadvisor                          │
@@ -525,11 +527,11 @@ All containers run on a dedicated Docker bridge network with static IPs:
 
 ```
   doris-fe-01
-    ├──► doris-be-01    (bRPC :8060) — sends query plan fragments
-    ├──► doris-be-01    (Thrift :9050) — heartbeat polling
+    ├──► doris-be-01/02 (bRPC :8060) — sends query plan fragments
+    ├──► doris-be-01/02 (Thrift :9050) — heartbeat polling
     └──► doris-ms       (bRPC :5000) — metadata queries
 
-  doris-be-01
+  doris-be-01/02
     ├──► minio          (HTTP :9000) — read/write S3 data
     └──► doris-ms       (bRPC :5000) — tablet metadata lookups
 
@@ -537,8 +539,8 @@ All containers run on a dedicated Docker bridge network with static IPs:
     └──► fdb            (TCP :4500) — persist metadata in FoundationDB
 
   data-generator
-    ├──► minio          (HTTP :9000) — upload CSV files
-    └──► doris-fe-01    (MySQL :9030) — trigger S3 LOAD commands
+    ├──► minio          (Not Used) — (Old workflow)
+    └──► doris-fe-01    (HTTP :8030) — trigger STREAM LOAD commands
 ```
 
 ---
@@ -809,7 +811,7 @@ Your docker-compose has several commented-out services ready to be enabled:
 | Service       | IP             | Purpose |
 |---------------|----------------|---------|
 | `doris-fe-02` | `172.20.80.3`  | FE Follower for HA (reads replicated from master) |
-| `doris-be-02` | `172.20.80.5`  | Additional compute node |
+| `doris-fe-03` | `172.20.80.7`  | FE Follower for HA |
 | `doris-be-03` | `172.20.80.6`  | Additional compute node |
 
 ### Monitoring Stack
@@ -829,7 +831,7 @@ To enable any of these, uncomment the relevant block in `docker-compose.yml` and
 ```
   generator.py (inside doris-data-generator container)
        │
-       │  1. GENERATE — Creates CSV in memory (500K rows, ~30MB)
+       │  1. GENERATE — Creates CSV in memory (3 streams × 100K rows)
        │     Columns: id, event, value, user_id, timestamp, description
        │
        │  2. STREAM LOAD — HTTP PUT directly to FE:
